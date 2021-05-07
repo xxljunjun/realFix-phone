@@ -3,19 +3,43 @@
 		{
 			"path": "pages/realFix/Featured",
 			"style": {
-				"navigationBarTitleText": "Featured"
+				"navigationStyle": "custom"
 			}
 		},
 		{
 			"path": "pages/realFix/NewPost",
 			"style": {
-				"navigationBarTitleText": "newPost"
+				"navigationStyle": "custom"
 			}
 		},
 		{
 			"path": "pages/realFix/Myself",
 			"style": {
-				"navigationBarTitleText": "Me"
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/realFix/Favorite",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/realFix/Mypost",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/realFix/detail",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/realFix/search",
+			"style": {
+				"navigationStyle": "custom"
 			}
 		}
 	],
@@ -27,15 +51,15 @@
 		"list": [
 			{
 				"pagePath": "pages/realFix/Featured",
-				"text": "内置组件"
+				"text": "Featured"
 			},
 			{
 				"pagePath": "pages/realFix/NewPost",
-				"text": "接口"
+				"text": "newPost"
 			},
 			{
 				"pagePath": "pages/realFix/Myself",
-				"text": "扩展组件"
+				"text": "Me"
 			}
 		]
 	}
