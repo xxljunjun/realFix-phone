@@ -1,15 +1,22 @@
 {
     "uni-app": {
         "scripts": {
-            "mp-dingtalk": { 
-                "title":"钉钉小程序", 
-                "env": { 
-                    "UNI_PLATFORM": "mp-alipay" 
+            "mp-dingtalk": {
+                "title": "钉钉小程序",
+                "env": {
+                    "UNI_PLATFORM": "mp-alipay"
                 },
-                "define": { 
-                    "MP-DINGTALK": true 
+                "define": {
+                    "MP-DINGTALK": true
                 }
             }
         }
+    },
+    "dependencies": {
+        "@dcloudio/uni-ui": "^1.3.0"
+    },
+    "devDependencies": {
+        "sass": "^1.32.12",
+        "sass-loader": "^10.1.1"
     }
 }
