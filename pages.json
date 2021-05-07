@@ -1,0 +1,42 @@
+{
+	"pages": [
+		{
+			"path": "pages/realFix/Featured",
+			"style": {
+				"navigationBarTitleText": "Featured"
+			}
+		},
+		{
+			"path": "pages/realFix/NewPost",
+			"style": {
+				"navigationBarTitleText": "newPost"
+			}
+		},
+		{
+			"path": "pages/realFix/Myself",
+			"style": {
+				"navigationBarTitleText": "Me"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [
+			{
+				"pagePath": "pages/realFix/Featured",
+				"text": "内置组件"
+			},
+			{
+				"pagePath": "pages/realFix/NewPost",
+				"text": "接口"
+			},
+			{
+				"pagePath": "pages/realFix/Myself",
+				"text": "扩展组件"
+			}
+		]
+	}
+}
