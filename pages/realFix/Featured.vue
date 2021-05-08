@@ -10,12 +10,15 @@
       <Box :items="item" :canDelete="canDelete" />
     </view>
     <image src="/static/daotong/point.png" class="sign_img" @tap="goToSign" />
+    <!-- 自定义底部导航栏 -->
+    <BottomTabBar current="featured" />
   </view>
 </template>
 
 <script>
 import Box from './component/Box'
 import SearchTopBack from './component/topBack/searchTopBack'
+import BottomTabBar from '../components/bottom-tabBar'
 export default {
   data() {
     return {
@@ -26,6 +29,7 @@ export default {
   components: {
     SearchTopBack,
     Box,
+    BottomTabBar,
   },
   mounted() {
     this.getHomeList()
@@ -107,6 +111,7 @@ export default {
   padding-top: 88rpx;
   width: 750px;
   background: rgba(224, 224, 224, 1);
+  padding-bottom: 146rpx;
   .detailbox {
     padding: 30rpx 0 0 30rpx;
   }
