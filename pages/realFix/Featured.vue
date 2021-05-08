@@ -9,7 +9,13 @@
     >
       <Box :items="item" :canDelete="canDelete" />
     </view>
-    <image src="/static/daotong/point.png" class="sign_img" @tap="goToSign" />
+    <image src="/static/daotong/point.png" class="sign_img" @tap="goToSign" v-if="imgStatus"/>
+    <!-- 签到成功 -->
+    <view class="succeed" v-if="isSign">
+      <image src="/static/daotong/succeed.png" class="succeedImg"/>
+      <view class="text">Received 100 Points</view>
+      
+    </view>
     <!-- 自定义底部导航栏 -->
     <BottomTabBar current="featured" />
   </view>
@@ -24,6 +30,8 @@ export default {
     return {
       detailArr: [],
       canDelete: false,
+      isSign:false,
+      imgStatus:true,
     }
   },
   components: {
@@ -37,6 +45,11 @@ export default {
   methods: {
     goToSign() {
       console.log('签到')
+      this.imgStatus = false
+      this.isSign = true
+      setTimeout(()=>{
+        this.isSign = false
+      },2000)
     },
     toDetail(id) {
       console.log('去到详情页', id)
@@ -121,6 +134,30 @@ export default {
     position: fixed;
     bottom: 300rpx;
     right: 0;
+  }
+  .succeed{
+    color:#fff;
+    width:360rpx;
+    height:360rpx;
+    background:rgba(0,0,0,0.6);
+    border-radius:20rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 9999;
+    .succeedImg{
+      width:222rpx;
+      height:222rpx;
+      margin-left:60rpx;
+      margin-top:20rpx;
+    }
+    .text{
+      text-align:center;
+    }
+    
   }
 }
 </style>
