@@ -20,7 +20,7 @@ export default {
     return {
       isReport: false,
       reportListArr: [
-        { id: 1, system: 'Content Quantity Needs Improvement', ischeck: false },
+        { id: 1, system: 'Content Quantity Needs ', ischeck: false },
         { id: 2, system: 'Inaccurate Article', ischeck: false },
         { id: 3, system: 'Advertisement', ischeck: false },
         { id: 4, system: 'Inappropriate Content', ischeck: false },

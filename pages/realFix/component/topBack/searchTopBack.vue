@@ -73,7 +73,7 @@ export default {
     .lo_text {
       font-size: 20rpx;
       font-family: PingFangSC-Medium, PingFang SC;
-      font-weight: 500;
+      font-weight: bold;
       color: rgba(70, 70, 70, 1);
       line-height: 28rpx;
     }

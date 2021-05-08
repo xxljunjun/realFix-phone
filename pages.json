@@ -1,5 +1,6 @@
 {
 	"easycom": {
+		//引入的组件无需在页面内import，也不需要在components内声明，即可在任意页面使用
 		"autoscan": true,
 		"custom": {
 			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
@@ -48,25 +49,5 @@
 				"navigationStyle": "custom"
 			}
 		}
-	],
-	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#007AFF",
-		"borderStyle": "black",
-		"backgroundColor": "#F8F8F8",
-		"list": [
-			{
-				"pagePath": "pages/realFix/Featured",
-				"text": "Featured"
-			},
-			{
-				"pagePath": "pages/realFix/NewPost",
-				"text": "newPost"
-			},
-			{
-				"pagePath": "pages/realFix/Myself",
-				"text": "Me"
-			}
-		]
-	}
+	]
 }

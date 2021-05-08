@@ -200,6 +200,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+uni-page-body,
+uni-page-refresh {
+  height: 100%;
+  background: rgba(235, 235, 235, 1);
+}
 /* textarea */
 .xxl {
   /deep/.uni-easyinput__content-textarea {
@@ -236,6 +241,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
 }
 .brn {
   width: 690rpx;
@@ -262,8 +269,8 @@ export default {
   box-shadow: 0px -2px 0px 0px rgba(204, 204, 204, 1),
     0px 2px 0px 0px rgba(249, 249, 249, 1);
   width: 100%;
-  // height:1206px;
-  margin-top: 88rpx;
+  // height: 100%;
+  padding-top: 88rpx;
 }
 .addBox {
   width: 690rpx;
@@ -296,7 +303,7 @@ export default {
 .intext_1 {
   font-size: 34rpx;
   font-family: HelveticaNeue-Medium, HelveticaNeue;
-  font-weight: 600;
+  font-weight: bold;
   color: rgba(13, 126, 255, 1);
   line-height: 42rpx;
 }
@@ -343,7 +350,7 @@ export default {
   font-size: 34rpx;
   font-family: HelveticaNeue;
   line-height: 42rpx;
-  font-weight: 500;
+  font-weight: bold;
 }
 .tishi {
   height: 44rpx;

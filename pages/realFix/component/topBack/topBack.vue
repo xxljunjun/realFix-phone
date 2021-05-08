@@ -62,7 +62,7 @@ export default {
     text-align: center;
     font-size: 36rpx;
     font-family: HelveticaNeue-Medium, HelveticaNeue;
-    font-weight: 600;
+    font-weight: bold;
     color: rgba(0, 0, 0, 1);
     line-height: 44rpx;
   }
