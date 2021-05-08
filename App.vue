@@ -1,5 +1,6 @@
+
 <script>
-import {uniBadge} from '@dcloudio/uni-ui'
+import { uniBadge } from '@dcloudio/uni-ui'
 export default {
   onLaunch: function () {},
   onShow: function () {
@@ -8,7 +9,7 @@ export default {
   onHide: function () {
     console.log('App Hide')
   },
-  components: {uniBadge},
+  components: { uniBadge },
   globalData: {},
   methods: {},
 }
