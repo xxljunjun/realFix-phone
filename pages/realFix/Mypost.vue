@@ -187,7 +187,7 @@ export default {
         height: 84rpx;
         font-size: 34rpx;
         font-family: HelveticaNeue-Medium, HelveticaNeue;
-        font-weight: 600;
+        font-weight: border;
         color: rgba(0, 0, 0, 1);
         line-height: 42rpx;
         margin-bottom: 16rpx;
@@ -229,7 +229,6 @@ export default {
         right: 30rpx;
         font-size: 30rpx;
         font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
         color: rgba(13, 126, 255, 1);
         line-height: 30rpx;
         .edit_img {
@@ -259,7 +258,7 @@ export default {
       .reason_Title {
         font-size: 30rpx;
         font-family: HelveticaNeue-Medium, HelveticaNeue;
-        font-weight: 600;
+        font-weight: border;
         color: rgba(0, 0, 0, 1);
         line-height: 38rpx;
       }

@@ -94,7 +94,7 @@ import MyDialog from "./myDialog"
 		height:84rpx;
 		font-size:34rpx;
 		font-family:HelveticaNeue-Medium,HelveticaNeue;
-		font-weight:600;
+		font-weight:border;
 		color:rgba(0,0,0,1);
 		line-height:42rpx;
 		margin-bottom:16rpx;
