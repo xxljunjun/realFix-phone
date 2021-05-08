@@ -86,7 +86,7 @@
 		height:42rpx;
 		font-size:34rpx;
 		font-family:HelveticaNeue-Medium,HelveticaNeue;
-		font-weight:border;
+		font-weight:bold;
 		color:rgba(0,0,0,1);
 		line-height:42rpx;
 		text-align: center;

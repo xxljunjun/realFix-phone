@@ -178,7 +178,7 @@ export default {
         .sy_text {
           font-size: 36rpx;
           font-family: HelveticaNeue-Medium, HelveticaNeue;
-          font-weight: border;
+          font-weight: bold;
           color: rgba(0, 0, 0, 1);
           line-height: 36rpx;
         }

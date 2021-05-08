@@ -303,7 +303,7 @@ uni-page-refresh {
 .intext_1 {
   font-size: 34rpx;
   font-family: HelveticaNeue-Medium, HelveticaNeue;
-  font-weight: border;
+  font-weight: bold;
   color: rgba(13, 126, 255, 1);
   line-height: 42rpx;
 }
@@ -350,7 +350,7 @@ uni-page-refresh {
   font-size: 34rpx;
   font-family: HelveticaNeue;
   line-height: 42rpx;
-  font-weight: border;
+  font-weight: bold;
 }
 .tishi {
   height: 44rpx;

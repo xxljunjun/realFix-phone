@@ -123,7 +123,7 @@ uni-page-refresh {
     .myName {
       margin-bottom: 12rpx;
       font-size: 40rpx;
-      font-weight: bolder;
+      font-weight: bold;
     }
     .text {
       color: rgba(85, 85, 85, 1);

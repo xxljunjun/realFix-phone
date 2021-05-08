@@ -187,7 +187,7 @@ export default {
         height: 84rpx;
         font-size: 34rpx;
         font-family: HelveticaNeue-Medium, HelveticaNeue;
-        font-weight: border;
+        font-weight: bold;
         color: rgba(0, 0, 0, 1);
         line-height: 42rpx;
         margin-bottom: 16rpx;
@@ -258,7 +258,7 @@ export default {
       .reason_Title {
         font-size: 30rpx;
         font-family: HelveticaNeue-Medium, HelveticaNeue;
-        font-weight: border;
+        font-weight: bold;
         color: rgba(0, 0, 0, 1);
         line-height: 38rpx;
       }
