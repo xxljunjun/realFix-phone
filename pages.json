@@ -10,43 +10,54 @@
 		{
 			"path": "pages/realFix/Featured",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/NewPost",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/Myself",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/Favorite",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"animationType": "fade-in",
+        		"animationDuration": 100
 			}
 		},
 		{
 			"path": "pages/realFix/Mypost",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"animationType": "fade-in",
+        		"animationDuration": 100
 			}
 		},
 		{
 			"path": "pages/realFix/detail",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"animationType": "fade-in",
+        		"animationDuration": 100
 			}
 		},
 		{
 			"path": "pages/realFix/search",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"animationType": "fade-in",
+        		"animationDuration": 100
 			}
 		}
 	]

@@ -1,10 +1,6 @@
 <template>
   <view class="bottom-tabBar">
-    <image
-      src="/static/daotong/bottom-bg@2x.png"
-      class="backImg"
-      mode="aspectFill"
-    />
+    <view class="backImg"></view>
     <view
       class="home"
       @click="goToHome"
@@ -95,11 +91,13 @@ export default {
   justify-content: space-around;
   text-align: center;
   .backImg {
-    width: 100%;
+    width: 750rpx;
     height: 116rpx;
     position: absolute;
     bottom: 0;
     z-index: -1;
+    background:#E6E6E6;
+    border-top:2rpx solid #D2D2D2;
   }
   .home {
     &.active {
@@ -111,9 +109,6 @@ export default {
     }
   }
   .newPost {
-    position: relative;
-    top: -8rpx;
-    left: -26rpx;
     .newPostImg {
       width: 64rpx;
       height: 64rpx;
