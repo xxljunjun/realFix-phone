@@ -37,7 +37,7 @@
         class="largeinp"
         disabled
         v-model="unit"
-        @touchend.stop="openUnit"
+        @click.stop="openUnit"
       />
       <image src="/static/daotong/speak.png" class="speak1" />
       <image src="/static/daotong/rightArrow.png" class="downArrow" />
@@ -46,7 +46,7 @@
           <li
             v-for="item in unitArr"
             :key="item.id"
-            @touchend.self="toChooseUnit(item.id)"
+            @click.stop="toChooseUnit(item.id)"
           >
             {{ item.unit }}
           </li>
@@ -60,7 +60,7 @@
     </view>
     <view class="inp_Box">
       <input
-        class="inp"
+        class="inp Systeminp"
         placeholder="Pelese select"
         disabled
         v-model="System"
@@ -139,10 +139,10 @@ export default {
   },
   onLoad() {},
   mounted() {
-    document.body.addEventListener('touchend', this.clickBody)
+    document.body.addEventListener('click', this.clickBody)
   },
   destroyed() {
-    document.body.removeEventListener('touchend', this.clickBody)
+    document.body.removeEventListener('click', this.clickBody)
   },
   methods: {
     toDtc(e) {
@@ -185,6 +185,7 @@ export default {
       this.unitState = true
     },
     toChooseUnit(id) {
+      console.log("id",id)
       if (id == 1) {
         this.unit = 'Miles'
       } else {
@@ -316,6 +317,11 @@ uni-page-refresh {
   margin: 8rpx 0 40rpx;
   display: flex;
   position: relative;
+  .Systeminp{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   .chooseUnit_Box {
     width: 340rpx;
     height: 216rpx;

@@ -6,6 +6,15 @@
 			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
 		}
 	},
+	"globalStyle": {
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom", //去除导航栏
+		"app-plus": {
+			// 将回弹属性关掉
+			"bounce": "none"
+		}
+ 
+	},
 	"pages": [
 		{
 			"path": "pages/realFix/Featured",
