@@ -1,6 +1,9 @@
 <template>
   <view class="detail">
     <TopBack title="" rightText="Report" @rightBack="rightBack" />
+    <view class="userInfo">
+      <view class="title">The failure code of 2016 Mercedes-benz E300L  is P064104</view>
+    </view>
     <Picker
       v-if="isReport"
       @toClose="toClosePicker"
@@ -49,5 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 .detail {
+  padding-top: 88rpx;
 }
 </style>

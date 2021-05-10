@@ -122,7 +122,7 @@ export default {
 <style lang="scss" scoped>
 .home {
   padding-top: 88rpx;
-  width: 750px;
+  width: 750rpx;
   background: rgba(224, 224, 224, 1);
   padding-bottom: 146rpx;
   .detailbox {
@@ -156,6 +156,7 @@ export default {
     }
     .text{
       text-align:center;
+      font-size:30rpx;
     }
     
   }
