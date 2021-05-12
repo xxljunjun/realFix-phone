@@ -8,7 +8,7 @@
           <image src="/static/daotong/close.png" class="close" @tap="toClose" />
         </view>
         <!-- 中间 -->
-        <view class="system_main" v-if="types === 'report'"> </view>
+        <view class="system_main"> </view>
       </view>
     </view>
   </view>

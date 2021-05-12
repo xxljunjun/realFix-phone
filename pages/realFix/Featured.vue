@@ -156,7 +156,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  padding-top: 88rpx;
+  padding-top: 178rpx;
   width: 750rpx;
   background: rgba(224, 224, 224, 1);
   padding-bottom: 146rpx;
