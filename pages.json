@@ -79,7 +79,42 @@
 			}
 		},
 		{
-			"path": "pages/realFix/mythings/MyComment",
+			"path": "pages/realFix/MyComment",
+			"style": {
+				"navigationStyle": "custom",
+				"animationDuration": 100
+			}
+		},
+		{
+			"path": "pages/realFix/MyFollowing",
+			"style": {
+				"navigationStyle": "custom",
+				"animationDuration": 100
+			}
+		},
+		{
+			"path": "pages/realFix/MyFixed",
+			"style": {
+				"navigationStyle": "custom",
+				"animationDuration": 100
+			}
+		},
+		{
+			"path": "pages/realFix/MyFixed",
+			"style": {
+				"navigationStyle": "custom",
+				"animationDuration": 100
+			}
+		},
+		{
+			"path": "pages/realFix/MyFlowers",
+			"style": {
+				"navigationStyle": "custom",
+				"animationDuration": 100
+			}
+		},
+		{
+			"path": "pages/realFix/MyMessage",
 			"style": {
 				"navigationStyle": "custom",
 				"animationDuration": 100

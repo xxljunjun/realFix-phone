@@ -1,7 +1,9 @@
 <template>
   <view class="mySelf">
     <view class="heard">
-      <view class="daily">Daily Tokens </view>
+      <view class="daily" @tap="goToSign" v-show="imgStatus">
+        <view class="txt">Daily Tokens</view>
+      </view>
       <view class="logoutbox" @click="toLogOut">Log out</view>
     </view>
     <view class="man">
@@ -14,19 +16,19 @@
     </view>
     <view class="fourBox man">
       <view @click="goTomythings(1)">
-        <view class="myName">4</view>
+        <view class="myName">84</view>
         <view class="text">Followers</view>
       </view>
       <view @click="goTomythings(2)">
-        <view class="myName">4</view>
+        <view class="myName">56</view>
         <view class="text">Following</view>
       </view>
       <view @click="goTomythings(3)">
-        <view class="myName">4</view>
+        <view class="myName">110</view>
         <view class="text">Fixed</view>
       </view>
       <view @click="goTomythings(4)">
-        <view class="myName">4</view>
+        <view class="myName">256</view>
         <view class="text">Comments</view>
       </view>
     </view>
@@ -40,6 +42,11 @@
       <view>{{ item.message }}</view>
       <!-- <view>{{ item.point }}</view> -->
       <image src="/static/myself/arrow.png" class="arrow" />
+    </view>
+    <!-- 签到成功 -->
+    <view class="succeed" v-if="isSign">
+      <image src="/static/daotong/succeed.png" class="succeedImg" />
+      <view class="text">Received 100 Points</view>
     </view>
     <!-- 自定义底部导航栏 -->
     <BottomTabBar current="me" />
@@ -57,6 +64,8 @@ import MyDialog from './component/myDialog'
 export default {
   data() {
     return {
+      imgStatus: true,
+      isSign: false,
       dialogIsShow: false,
       boxarr: [
         { id: 1, message: 'Lottery', iconSrc: '/static/myself/red.png' },
@@ -81,26 +90,34 @@ export default {
     MyDialog,
   },
   methods: {
+    goToSign() {
+      console.log('签到')
+      this.imgStatus = false
+      this.isSign = true
+      setTimeout(() => {
+        this.isSign = false
+      }, 2000)
+    },
     goTomythings(index) {
       switch (index) {
         case 1:
           uni.navigateTo({
-            url: 'Points',
+            url: 'MyFlowers',
           })
           break
         case 2:
           uni.navigateTo({
-            url: 'Points',
+            url: 'MyFollowing',
           })
           break
         case 3:
           uni.navigateTo({
-            url: 'Favorite',
+            url: 'MyFixed',
           })
           break
         case 4:
           uni.navigateTo({
-            url: 'Mypost',
+            url: 'MyComment',
           })
           break
         default:
@@ -136,6 +153,9 @@ export default {
           })
           break
         case 5:
+          uni.navigateTo({
+            url: 'MyMessage',
+          })
           break
 
         default:
@@ -169,6 +189,7 @@ uni-page-refresh {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 70rpx;
+    position: relative;
     .daily {
       width: 325rpx;
       height: 80rpx;
@@ -177,9 +198,21 @@ uni-page-refresh {
       filter: blur(0px);
       display: flex;
       align-items: center;
+      justify-content: flex-end;
+      .txt {
+        margin-right: 60rpx;
+        font-size: 30rpx;
+        font-weight: bolder;
+        color: rgba(159, 91, 2, 1);
+        line-height: 34rpx;
+      }
     }
     .logoutbox {
-      margin-right: 30rpx;
+      font-size: 30rpx;
+      color: rgba(85, 85, 85, 1);
+      line-height: 34rpx;
+      position: absolute;
+      right: 30rpx;
     }
   }
   .man {
@@ -243,6 +276,30 @@ uni-page-refresh {
       height: 56rpx;
       width: 56rpx;
       margin: 0 30rpx;
+    }
+  }
+  .succeed {
+    color: #fff;
+    width: 360rpx;
+    height: 360rpx;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 9999;
+    .succeedImg {
+      width: 222rpx;
+      height: 222rpx;
+      margin-left: 60rpx;
+      margin-top: 20rpx;
+    }
+    .text {
+      text-align: center;
+      font-size: 30rpx;
     }
   }
 }
