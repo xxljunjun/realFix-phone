@@ -1,8 +1,10 @@
 <template>
   <view class="detail">
     <TopBack title="" rightText="Report" @rightBack="rightBack" />
-    <view class="userInfo">
-      <view class="title">The failure code of 2016 Mercedes-benz E300L  is P064104</view>
+    <view class="all">
+      <view class="title"
+        >The failure code of 2016 Mercedes-benz E300L is P064104</view
+      >
     </view>
     <Picker
       v-if="isReport"
@@ -51,7 +53,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+uni-page-body,
+uni-page-refresh {
+  height: 100%;
+}
 .detail {
   padding-top: 88rpx;
+  background: rgba(235, 235, 235, 1);
+  height: 100%;
+  box-sizing: border-box;
+  .all {
+    padding: 30rpx;
+    .title {
+      color: #000;
+      font-weight: bolder;
+      font-size: 40rpx;
+      line-height: 49rpx;
+    }
+  }
 }
 </style>

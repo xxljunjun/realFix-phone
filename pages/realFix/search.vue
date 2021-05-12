@@ -1,7 +1,6 @@
 <template>
   <view class="search">
     <SearchCommon />
-    搜索逻辑历史记录功能
   </view>
 </template>
 

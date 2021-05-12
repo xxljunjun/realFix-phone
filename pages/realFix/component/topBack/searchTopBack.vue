@@ -33,6 +33,9 @@ export default {
     },
     goToLottery() {
       console.log('跳转抽奖页面')
+      uni.navigateTo({
+        url: 'Lottery',
+      })
     },
   },
 }

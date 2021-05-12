@@ -1,6 +1,9 @@
 <template>
   <view class="mySelf">
-    <!-- <view class="heard"></view> -->
+    <view class="heard">
+      <view class="daily">Daily Tokens </view>
+      <view class="logoutbox" @click="toLogOut">Log out</view>
+    </view>
     <view class="man">
       <image src="/static/myself/body.png" class="manImg" mode="scaleToFill" />
       <view>
@@ -8,6 +11,24 @@
         <view class="text">Senior maintenance </view>
       </view>
       <image src="/static/myself/arrow.png" class="arrow" />
+    </view>
+    <view class="fourBox man">
+      <view @click="goTomythings(1)">
+        <view class="myName">4</view>
+        <view class="text">Followers</view>
+      </view>
+      <view @click="goTomythings(2)">
+        <view class="myName">4</view>
+        <view class="text">Following</view>
+      </view>
+      <view @click="goTomythings(3)">
+        <view class="myName">4</view>
+        <view class="text">Fixed</view>
+      </view>
+      <view @click="goTomythings(4)">
+        <view class="myName">4</view>
+        <view class="text">Comments</view>
+      </view>
     </view>
     <view
       class="box"
@@ -20,7 +41,6 @@
       <!-- <view>{{ item.point }}</view> -->
       <image src="/static/myself/arrow.png" class="arrow" />
     </view>
-    <view class="logout" @click="toLogOut"> Log out </view>
     <!-- 自定义底部导航栏 -->
     <BottomTabBar current="me" />
     <MyDialog
@@ -50,7 +70,7 @@ export default {
         { id: 4, message: 'My Post', iconSrc: '/static/myself/green.png' },
         {
           id: 5,
-          message: 'Address Management',
+          message: 'My Messages',
           iconSrc: '/static/myself/blue.png',
         },
       ],
@@ -61,6 +81,32 @@ export default {
     MyDialog,
   },
   methods: {
+    goTomythings(index) {
+      switch (index) {
+        case 1:
+          uni.navigateTo({
+            url: 'Points',
+          })
+          break
+        case 2:
+          uni.navigateTo({
+            url: 'Points',
+          })
+          break
+        case 3:
+          uni.navigateTo({
+            url: 'Favorite',
+          })
+          break
+        case 4:
+          uni.navigateTo({
+            url: 'Mypost',
+          })
+          break
+        default:
+          break
+      }
+    },
     toclosemask() {
       this.dialogIsShow = false
     },
@@ -70,8 +116,14 @@ export default {
     goToPage(id) {
       switch (id) {
         case 1:
+          uni.navigateTo({
+            url: 'Lottery',
+          })
           break
         case 2:
+          uni.navigateTo({
+            url: 'Points',
+          })
           break
         case 3:
           uni.navigateTo({
@@ -110,16 +162,32 @@ uni-page-refresh {
   color: #000;
   .heard {
     width: 750rpx;
-    height: 88rpx;
+    height: 80rpx;
     background: rgba(235, 235, 235, 1);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 70rpx;
+    .daily {
+      width: 325rpx;
+      height: 80rpx;
+      background: rgba(255, 250, 228, 1);
+      border-radius: 0px 65px 65px 0px;
+      filter: blur(0px);
+      display: flex;
+      align-items: center;
+    }
+    .logoutbox {
+      margin-right: 30rpx;
+    }
   }
   .man {
     width: 750rpx;
-    height: 230rpx;
+    height: 150rpx;
     background: rgba(235, 235, 235, 1);
     display: flex;
     align-items: center;
-    margin-bottom: 20rpx;
     .myName {
       margin-bottom: 12rpx;
       font-size: 40rpx;
@@ -142,6 +210,19 @@ uni-page-refresh {
       margin-left: 140rpx;
     }
   }
+  .fourBox {
+    width: 750rpx;
+    height: 180rpx;
+    background: rgba(235, 235, 235, 1);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+    text-align: center;
+    justify-content: space-around;
+    font-size: 26rpx;
+    color: rgba(85, 85, 85, 1);
+    line-height: 32rpx;
+  }
   .box {
     width: 750rpx;
     height: 110rpx;
@@ -163,16 +244,6 @@ uni-page-refresh {
       width: 56rpx;
       margin: 0 30rpx;
     }
-  }
-  .logout {
-    width: 750rpx;
-    height: 110rpx;
-    background: rgba(235, 235, 235, 1);
-    margin-top: 20rpx;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 </style>
