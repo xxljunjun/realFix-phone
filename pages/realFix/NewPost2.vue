@@ -1,7 +1,7 @@
 <template>
   <view>
     <TopBack title="New Post" rightText="Submit" @rightBack="submitHandle" />
-    <Toast :dialogIsShow="isSubimit" @confirm="ok"/>
+    <Toast :dialogIsShow="isSubimit" @confirm="ok" />
   </view>
 </template>
 
@@ -23,9 +23,12 @@ export default {
       this.isSubimit = true
       console.log('去提交案例')
     },
-    ok(){
+    ok() {
       this.isSubimit = false
-    }
+      uni.redirectTo({
+        url: 'Featured',
+      })
+    },
   },
 }
 </script>
