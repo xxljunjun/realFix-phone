@@ -1,6 +1,6 @@
 <template>
   <view class="xxl">
-    <TopBack title="New Post" />
+    <TopBack title="New Post" rightText="Next" @rightBack="nextHandle" />
     <!-- 导入报告按钮 -->
     <view class="addBox">
       <view class="text_1">
@@ -17,7 +17,7 @@
       <text class="line_text">Vehicle</text>
       <image src="/static/daotong/prompt.png" class="tishi" />
     </view>
-    <view class="inp_Box">
+    <view class="inp_Box" @click="toVersion">
       <input
         class="inp"
         placeholder="Pelese select"
@@ -33,12 +33,7 @@
     </view>
     <view class="inp_Box">
       <input class="smallinp" placeholder="Pelese enter" v-model="unitNum" />
-      <input
-        class="largeinp"
-        disabled
-        v-model="unit"
-        @click.stop="openUnit"
-      />
+      <input class="largeinp" disabled v-model="unit" @click.stop="openUnit" />
       <image src="/static/daotong/speak.png" class="speak1" />
       <image src="/static/daotong/rightArrow.png" class="downArrow" />
       <view class="chooseUnit_Box" v-if="unitState">
@@ -88,13 +83,6 @@
       </uni-easyinput>
       <image src="/static/daotong/speak.png" class="speak" />
     </view>
-    <!-- 提交 -->
-    <view class="sb_Box">
-      <navigator url="/pages/about/about">
-        <button type="primary" class="brn">Next step</button>
-      </navigator>
-    </view>
-
     <!-- 选择System -->
     <Picker
       v-if="ischooseSystem"
@@ -145,6 +133,17 @@ export default {
     document.body.removeEventListener('click', this.clickBody)
   },
   methods: {
+    toVersion() {
+      uni.navigateTo({
+        url: 'component/NewPost/version',
+      })
+    },
+    nextHandle() {
+      console.log('下一步')
+      uni.navigateTo({
+        url: 'NewPost2',
+      })
+    },
     toDtc(e) {
       //回车键13
       //空格键32
@@ -185,7 +184,7 @@ export default {
       this.unitState = true
     },
     toChooseUnit(id) {
-      console.log("id",id)
+      console.log('id', id)
       if (id == 1) {
         this.unit = 'Miles'
       } else {
@@ -227,23 +226,6 @@ uni-page-refresh {
   height: 56px;
   background: rgba(225, 225, 225, 1);
   border-radius: 28px;
-}
-.sb_Box {
-  width: 750rpx;
-  height: 128rpx;
-  background: linear-gradient(
-      180deg,
-      rgba(233, 233, 233, 1) 0%,
-      rgba(211, 211, 211, 1) 100%
-    )
-    rgba(235, 235, 235, 1);
-  box-shadow: 0px -2px 8px 0px rgba(204, 204, 204, 1),
-    0px 2px 0px 0px rgba(240, 240, 240, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
 }
 .brn {
   width: 690rpx;
@@ -317,7 +299,7 @@ uni-page-refresh {
   margin: 8rpx 0 40rpx;
   display: flex;
   position: relative;
-  .Systeminp{
+  .Systeminp {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

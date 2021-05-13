@@ -131,6 +131,21 @@
 				"animationDuration": 100,
 				"animationType": "none"
 			}
+		},
+		{
+			"path": "pages/realFix/component/NewPost/version",
+			"style": {
+				"navigationStyle": "custom",
+				"animationDuration": 100,
+				"animationType": "none"
+			}
+		},
+		{
+			"path": "pages/realFix/NewPost2",
+			"style": {
+				"navigationStyle": "custom",
+				"animationType": "none"
+			}
 		}
 	]
 }

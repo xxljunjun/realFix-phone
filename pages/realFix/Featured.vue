@@ -192,10 +192,11 @@ export default {
     }
     .right {
       margin-right: 30rpx;
+      text-align: center;
       .threen {
         width: 44rpx;
         height: 44rpx;
-        margin-right: 30rpx;
+        margin-right: 15rpx;
       }
     }
   }
