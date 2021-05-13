@@ -40,84 +40,96 @@
 			"path": "pages/realFix/Favorite",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/Mypost",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/detail",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/search",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/Lottery",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/Points",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/MyComment",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/MyFollowing",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/MyFixed",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/MyFixed",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/MyFlowers",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		},
 		{
 			"path": "pages/realFix/MyMessage",
 			"style": {
 				"navigationStyle": "custom",
-				"animationDuration": 100
+				"animationDuration": 100,
+				"animationType": "none"
 			}
 		}
 	]
