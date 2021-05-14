@@ -84,9 +84,16 @@ export default {
   },
   mounted() {
     this.getHomeList()
+  },
+  onShow() {
+    this.paopaoStatus = true
     setTimeout(() => {
       this.paopaoStatus = false
     }, 3000)
+  },
+  onHide() {},
+  onLoad: function (option) {
+    
   },
   methods: {
     toSearchMake(id) {
