@@ -4,18 +4,19 @@
     <view class="gundong">
       <view class="gundong_inner">
         <scroll-view class="scroll-view_H" scroll-x="true">
-          <view id="demo1" class="scroll-view-item_H uni-bg-red">A</view>
-          <view id="demo2" class="scroll-view-item_H uni-bg-green">B</view>
-          <view id="demo3" class="scroll-view-item_H uni-bg-blue">C</view>
-          <view id="demo4" class="scroll-view-item_H uni-bg-red">D</view>
-          <view id="demo5" class="scroll-view-item_H uni-bg-green">E</view>
-          <view id="demo6" class="scroll-view-item_H uni-bg-blue">F</view>
-          <view id="demo7" class="scroll-view-item_H uni-bg-red">G</view>
-          <view id="demo8" class="scroll-view-item_H uni-bg-green">H</view>
-          <view id="demo9" class="scroll-view-item_H uni-bg-blue">I</view>
-          <view id="demo10" class="scroll-view-item_H uni-bg-red">J</view>
-          <view id="demo11" class="scroll-view-item_H uni-bg-green">K</view>
-          <view id="demo12" class="scroll-view-item_H uni-bg-blue">L</view>
+          <view
+            class="scroll-view-item_H"
+            v-for="item in makeArr"
+            :key="item.id"
+            @click="toSearchMake(item.id)"
+            :class="item.ischecked ? 'active' : ''"
+            >{{ item.makeName }}
+            <image
+              src="/static/daotong/blue.png"
+              class="blue"
+              v-if="item.ischecked"
+            />
+          </view>
         </scroll-view>
       </view>
       <view class="right" @click="goToChooseMask">
@@ -41,6 +42,11 @@
       <image src="/static/daotong/succeed.png" class="succeedImg" />
       <view class="text">Received 100 Points</view>
     </view>
+    <!-- 气泡 -->
+    <view class="paopao" v-if="paopaoStatus">
+      <view>Post cases to win prozes!</view>
+      <view> <text class="num">8</text>new diagnostic cases are awaited.</view>
+    </view>
     <!-- 自定义底部导航栏 -->
     <BottomTabBar current="featured" />
     <ChooseMask v-if="ischooseMask" @toClose="toClose" title="All Makes" />
@@ -55,6 +61,14 @@ import ChooseMask from './component/chooseMask'
 export default {
   data() {
     return {
+      paopaoStatus: true,
+      makeArr: [
+        { id: 1, makeName: 'GM', ischecked: false },
+        { id: 2, makeName: 'BMW', ischecked: false },
+        { id: 3, makeName: 'Benz', ischecked: false },
+        { id: 4, makeName: 'Ford', ischecked: false },
+        { id: 5, makeName: 'Toyota', ischecked: false },
+      ],
       ischooseMask: false,
       detailArr: [],
       canDelete: false,
@@ -70,8 +84,21 @@ export default {
   },
   mounted() {
     this.getHomeList()
+    setTimeout(() => {
+      this.paopaoStatus = false
+    }, 3000)
   },
   methods: {
+    toSearchMake(id) {
+      console.log(id)
+      this.makeArr.forEach((val) => {
+        if (val.id == id) {
+          val.ischecked = true
+        } else {
+          val.ischecked = false
+        }
+      })
+    },
     toClose() {
       this.ischooseMask = false
     },
@@ -160,6 +187,62 @@ export default {
   width: 750rpx;
   background: rgba(224, 224, 224, 1);
   padding-bottom: 146rpx;
+  .paopao {
+    width: 500rpx;
+    height: 140rpx;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px -4rpx 16rpx 0px rgba(0, 0, 0, 0.24);
+    border-radius: 10rpx;
+    position: fixed;
+    bottom: 140rpx;
+    z-index: 99;
+    left: 50%;
+    margin-left: -250rpx;
+    font-size: 26rpx;
+    color: #000;
+    line-height: 40rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30rpx;
+    .num {
+      color: rgba(0, 126, 255, 1);
+      margin-right: 10rpx;
+    }
+  }
+  //三角形
+  .paopao::before {
+    box-sizing: content-box;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 70px;
+    right: 118px;
+    padding: 0;
+    border-top: 20rpx solid #ffffff;
+    border-bottom: 20rpx solid transparent;
+    border-left: 20rpx solid transparent;
+    border-right: 20rpx solid transparent;
+    display: block;
+    content: '';
+    z-index: 12;
+  }
+  .paopao::after {
+    box-sizing: content-box;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 70px;
+    right: 117px;
+    padding: 0;
+    border-top: 18rpx solid #aaaaaa;
+    border-bottom: 18rpx solid transparent;
+    border-left: 18rpx solid transparent;
+    border-right: 18rpx solid transparent;
+    display: block;
+    content: '';
+    z-index: 10;
+  }
   .gundong {
     height: 120rpx;
     width: 750rpx;
@@ -179,14 +262,28 @@ export default {
       align-items: center;
       .scroll-view_H {
         .scroll-view-item_H {
-          width: 110rpx;
+          min-width: 110rpx;
           height: 72rpx;
+          padding: 0 10rpx;
           display: inline-block; //重要的scroll-view
           background: #fff;
           border-radius: 10rpx;
           text-align: center;
           line-height: 72rpx;
           margin-right: 20rpx;
+          position: relative;
+          &.active {
+            color: #007aff;
+            background: rgba(211, 223, 237, 1);
+            border: 1px solid rgba(0, 122, 255, 1);
+          }
+          .blue {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 34rpx;
+            width: 34rpx;
+          }
         }
       }
     }

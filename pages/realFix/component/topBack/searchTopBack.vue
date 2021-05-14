@@ -6,8 +6,8 @@
       <image src="/static/daotong/speak.png" class="speak_img" />
     </view>
     <view class="Lottery" @tap="goToLottery">
-      <image src="/static/daotong/price.png" class="lottery_img" />
-      <view class="lo_text">Lottery</view>
+      <image src="/static/daotong/active.png" class="lottery_img" />
+      <!-- <view class="lo_text">Lottery</view> -->
     </view>
   </view>
 </template>
@@ -70,8 +70,8 @@ export default {
     justify-content: center;
     align-items: center;
     .lottery_img {
-      height: 48rpx;
-      width: 48rpx;
+      height: 80rpx;
+      width: 80rpx;
     }
     .lo_text {
       font-size: 20rpx;
