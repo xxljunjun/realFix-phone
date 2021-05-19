@@ -33,7 +33,36 @@
           <text style="color: red">*</text>
           Dignostic Procedures
         </view>
-        <view class="dignostic_box"></view>
+        <!-- <view class="dignostic_box"></view> -->
+        <text class="btn">Add Step</text>
+      </view>
+      <!-- Correction -->
+      <view class="correction">
+        <view class="TXT">
+          <text style="color: red">*</text>
+          Correction
+        </view>
+        <view class="txt"> Part </view>
+        <text class="btn">Choose Parts</text>
+        <view class="txt"> Description </view>
+        <uni-easyinput
+          type="textarea"
+          autoHeight
+          v-model="Dtcvalue"
+          placeholder="Pelese select"
+          class="Doctextarea"
+          :clearable="false"
+          placeholderStyle="color: #AAAAAA;font-size:30rpx;"
+        >
+        </uni-easyinput>
+      </view>
+    </view>
+    <!-- last -->
+    <view class="normal">
+      <checkbox value="cb" checked="true" class="choose" />
+      <view> Nominate for Featured Fix of the Week (1/3) </view>
+      <view>
+        <image src="/static/daotong/wenhao1.png" class="wenhao1" />
       </view>
     </view>
     <TopBack title="New Post" rightText="Submit" @rightBack="submitHandle" />
@@ -75,8 +104,25 @@ uni-page-refresh {
   height: 100%;
   background: rgba(235, 235, 235, 1);
 }
+.btn {
+  display: block;
+  width: 222rpx;
+  height: 72rpx;
+  background: linear-gradient(
+    360deg,
+    rgba(213, 213, 213, 1) 0%,
+    rgba(241, 241, 241, 1) 100%
+  );
+  border-radius: 10rpx;
+  border: 1rpx solid rgba(184, 184, 184, 1);
+  text-align: center;
+  line-height: 72rpx;
+  color: #0d7eff;
+}
+
 .newPost2 {
   padding-top: 88rpx;
+  background: #ebebeb;
   .box {
     padding-left: 30rpx;
     .title {
@@ -108,8 +154,6 @@ uni-page-refresh {
             width: 36rpx;
           }
         }
-        .txt_2 {
-        }
       }
     }
     .symptoms {
@@ -139,8 +183,48 @@ uni-page-refresh {
         margin-bottom: 10rpx;
         font-weight: bolder;
       }
-      .dignostic_box {
+    }
+    .correction {
+      margin-top: 40rpx;
+      .TXT {
+        font-size: 34rpx;
+        color: #000;
+        line-height: 42rpx;
+        margin-bottom: 10rpx;
+        font-weight: bolder;
       }
+      .txt {
+        margin: 8rpx 0;
+        font-size: 30rpx;
+        color: rgba(85, 85, 85, 1);
+        line-height: 38rpx;
+      }
+      .Doctextarea {
+        max-width: 690rpx;
+        min-height: 88rpx;
+        background: rgba(245, 245, 245, 1);
+        box-shadow: 0px 4rpx 2rpx 0px rgba(226, 226, 226, 1);
+        border-radius: 10rpx;
+        border: 2rpx solid rgba(184, 184, 184, 1);
+        font-size: 30rpx;
+      }
+    }
+  }
+  .normal {
+    margin-top: 40rpx;
+    width: 750rpx;
+    height: 120rpx;
+    background: #f9f9f9;
+    box-shadow: 0px -2rpx 6rpx 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    .wenhao1 {
+      width: 44rpx;
+      height: 44rpx;
+      margin-right: 30rpx;
+    }
+    .choose {
+      margin: 0 16rpx 0 30rpx;
     }
   }
 }

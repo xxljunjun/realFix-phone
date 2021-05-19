@@ -92,9 +92,7 @@ export default {
     }, 3000)
   },
   onHide() {},
-  onLoad: function (option) {
-    
-  },
+  onLoad: function (option) {},
   methods: {
     toSearchMake(id) {
       console.log(id)
@@ -218,38 +216,38 @@ export default {
     }
   }
   //三角形
-  .paopao::before {
-    box-sizing: content-box;
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: 70px;
-    right: 118px;
-    padding: 0;
-    border-top: 20rpx solid #ffffff;
-    border-bottom: 20rpx solid transparent;
-    border-left: 20rpx solid transparent;
-    border-right: 20rpx solid transparent;
-    display: block;
-    content: '';
-    z-index: 12;
-  }
-  .paopao::after {
-    box-sizing: content-box;
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: 70px;
-    right: 117px;
-    padding: 0;
-    border-top: 18rpx solid #aaaaaa;
-    border-bottom: 18rpx solid transparent;
-    border-left: 18rpx solid transparent;
-    border-right: 18rpx solid transparent;
-    display: block;
-    content: '';
-    z-index: 10;
-  }
+  // .paopao::before {
+  //   box-sizing: content-box;
+  //   width: 0px;
+  //   height: 0px;
+  //   position: absolute;
+  //   top: 70px;
+  //   right: 118px;
+  //   padding: 0;
+  //   border-top: 20rpx solid #ffffff;
+  //   border-bottom: 20rpx solid transparent;
+  //   border-left: 20rpx solid transparent;
+  //   border-right: 20rpx solid transparent;
+  //   display: block;
+  //   content: '';
+  //   z-index: 12;
+  // }
+  // .paopao::after {
+  //   box-sizing: content-box;
+  //   width: 0px;
+  //   height: 0px;
+  //   position: absolute;
+  //   top: 70px;
+  //   right: 117px;
+  //   padding: 0;
+  //   border-top: 18rpx solid #aaaaaa;
+  //   border-bottom: 18rpx solid transparent;
+  //   border-left: 18rpx solid transparent;
+  //   border-right: 18rpx solid transparent;
+  //   display: block;
+  //   content: '';
+  //   z-index: 10;
+  // }
   .gundong {
     height: 120rpx;
     width: 750rpx;
