@@ -33,8 +33,17 @@
           <text style="color: red">*</text>
           Dignostic Procedures
         </view>
-        <!-- <view class="dignostic_box"></view> -->
-        <text class="btn">Add Step</text>
+        <!-- 点击加一步后的 -->
+        <view v-for="(item, index) in dignosticArr" :key="index">
+          <text class="step">Step{{ index + 1 }}</text>
+          <image
+            src="/static/daotong/del.png"
+            class="del"
+            @click="reduceStep"
+          />
+          <view class="dignostic_box"></view>
+        </view>
+        <text class="btn" @click="addStep" v-if="addStepStatus">Add Step</text>
       </view>
       <!-- Correction -->
       <view class="correction">
@@ -43,7 +52,7 @@
           Correction
         </view>
         <view class="txt"> Part </view>
-        <text class="btn">Choose Parts</text>
+        <text class="btn" @click="chooseParts">Choose Parts</text>
         <view class="txt"> Description </view>
         <uni-easyinput
           type="textarea"
@@ -77,6 +86,9 @@ export default {
   data() {
     return {
       isSubimit: false,
+      dignosticArr: [],
+      Dtcvalue: '',
+      addStepStatus: true,
     }
   },
   components: {
@@ -93,6 +105,24 @@ export default {
       uni.redirectTo({
         url: 'Featured',
       })
+    },
+    addStep() {
+      console.log('新增一级')
+      let line = {}
+      this.dignosticArr.push(line)
+      if (this.dignosticArr.length > 4) {
+        this.addStepStatus = false
+      } else {
+        this.addStepStatus = true
+      }
+    },
+    chooseParts() {
+      console.log('去选择部分')
+    },
+    reduceStep() {
+      console.log('减少一步')
+      this.dignosticArr.pop()
+      this.addStepStatus = true
     },
   },
 }
@@ -176,12 +206,36 @@ uni-page-refresh {
     }
     .Dignostic {
       margin-top: 40rpx;
+      .del {
+        height: 44rpx;
+        width: 44rpx;
+        position: relative;
+        top: 10rpx;
+        margin-left: 20rpx;
+      }
+      .step {
+        margin-bottom: 10rpx;
+        font-size: 30rpx;
+
+        color: rgba(85, 85, 85, 1);
+        line-height: 38rpx;
+      }
       .TXT {
         font-size: 34rpx;
         color: #000;
         line-height: 42rpx;
         margin-bottom: 10rpx;
         font-weight: bolder;
+      }
+      .dignostic_box {
+        width: 690rpx;
+        height: 345rpx;
+        background: rgba(245, 245, 245, 1);
+        box-shadow: 0px 4rpx 2rpx 0px rgba(226, 226, 226, 1);
+        border-radius: 10rpx;
+        border: 2rpx solid rgba(184, 184, 184, 1);
+        margin-bottom: 35rpx;
+        margin-top: 10rpx;
       }
     }
     .correction {
