@@ -14,7 +14,7 @@
             <view class="edit" @tap="toEdit">{{ status }}</view>
           </view>
           <!-- 已选择 -->
-          <view class="box_1">
+          <view class="box_1" id="itxst">
             <view class="itemBox" v-for="item in maks2Arr" :key="item.id"
               >{{ item.maks2Name }}
               <image
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import Sortable from 'sortablejs'
 export default {
   data() {
     return {
@@ -77,8 +78,28 @@ export default {
     },
   },
   components: {},
-  mounted() {},
+  mounted() {
+    this.init()
+  },
   methods: {
+    init() {
+      //获取对象
+      var el = document.getElementById('itxst')
+      //设置配置
+      var ops = {
+        animation: 300,
+        //拖动结束
+        onEnd: function (evt) {
+          console.log(evt)
+          //获取拖动后的排序
+          var arr = sortable.toArray()
+          // alert(JSON.stringify(arr))
+          console.log(arr)
+        },
+      }
+      //初始化
+      var sortable = Sortable.create(el, ops)
+    },
     toAddMake(id) {
       console.log('增加')
       this.maks1Arr = this.maks1Arr.filter((val) => {
