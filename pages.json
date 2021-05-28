@@ -146,6 +146,13 @@
 				"navigationStyle": "custom",
 				"animationType": "none"
 			}
+		},
+		{
+			"path": "pages/realFix/selectParts/index",
+			"style": {
+				"navigationStyle": "custom",
+				"animationType": "none"
+			}
 		}
 	]
 }

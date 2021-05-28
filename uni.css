@@ -40,3 +40,8 @@ li {
 ul {
   padding: 0;
 }
+
+/deep/.pswp {
+  display: none !important;
+  background: #ebebeb !important;
+}

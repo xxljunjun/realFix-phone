@@ -118,6 +118,10 @@ export default {
     },
     chooseParts() {
       console.log('去选择部分')
+      uni.navigateTo({
+        url: '/pages/realFix/selectParts/index',
+      })
+      // this.$router.push('')
     },
     reduceStep() {
       console.log('减少一步')
