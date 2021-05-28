@@ -2,9 +2,9 @@ import Vue from 'vue'
 import App from './App'
 import store from './store'
 import Viewer from 'v-viewer'
-import 'viewerjs/dist/viewer.css'
 import preview from 'vue-photo-preview'
-import 'vue-photo-preview/dist/skin.css'
+// import 'viewerjs/dist/viewer.css'
+// import 'vue-photo-preview/dist/skin.css'
 
 Vue.config.productionTip = false
 Vue.prototype.$store = store

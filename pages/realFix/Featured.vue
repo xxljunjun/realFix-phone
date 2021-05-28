@@ -94,6 +94,21 @@ export default {
   onHide() {},
   onLoad: function (option) {},
   methods: {
+    handleTouchmove(e) {
+      // console.log('handleTouchmove', e)
+      e.preventDefault()
+    },
+    preventMove() {
+      document
+        .querySelector('.home')
+        .addEventListener('touchmove', this.handleTouchmove)
+    },
+    recoverMove() {
+      //恢复滑动
+      document
+        .querySelector('.home')
+        .removeEventListener('touchmove', this.handleTouchmove)
+    },
     toSearchMake(id) {
       console.log(id)
       this.makeArr.forEach((val) => {
@@ -106,9 +121,11 @@ export default {
     },
     toClose() {
       this.ischooseMask = false
+      this.recoverMove()
     },
     goToChooseMask() {
       this.ischooseMask = true
+      this.preventMove()
     },
     goToSign() {
       console.log('签到')
