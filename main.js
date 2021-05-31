@@ -6,6 +6,8 @@ import Viewer from 'v-viewer'
 import i18n from './src/i18n';
 // import router from './src/router/index.js'
 
+// import http from '@/utils/api'
+// Vue.prototype.$http = http
 
 Vue.config.productionTip = false
 Vue.use(Viewer);

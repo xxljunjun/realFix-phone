@@ -49,8 +49,9 @@ export default {
     }
   },
   mounted() {
-    console.log('000000000', this.$store)
-    console.log('11111111111', this.status)
+    this.togetSomething()
+    // console.log('000000000', this.$store)
+    // console.log('11111111111', this.status)
     /* 
 		1、可以用mapState、mapGetters在computed进行简写。
 		2、可以用mapMutations、mapActions在methods进行简写。
@@ -68,6 +69,21 @@ export default {
     Picker,
   },
   methods: {
+    togetSomething() {
+      console.log('掉接口前')
+      uni.request({
+        url:
+          'http://localhost:8080/he/freeweather?city=beijing&appkey=7a85fc9df58cd155f764e033a257d879',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded', //自定义请求头信息
+        },
+        //请求成功后返回
+        success: (res) => {
+          // 请求成功之后将数据给Info
+          console.log('0000000000000', res)
+        },
+      })
+    },
     changeLanguage() {
       console.log('国际化', this.$i18n)
       this.$i18n.locale = this.$i18n.locale === 'zh' ? 'en' : 'zh'
