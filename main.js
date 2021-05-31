@@ -14,6 +14,10 @@ Viewer.setDefaults({
 });
 Vue.use(preview)
 
+
+import MescrollUni from "@/pages/mescroll-uni/mescroll-uni.vue"
+Vue.component('mescroll-uni', MescrollUni)
+
 App.mpType = 'app'
 
 const app = new Vue({

@@ -1,0 +1,39 @@
+{
+  "_from": "mescroll-uni",
+  "_id": "mescroll-uni@1.3.7",
+  "_inBundle": false,
+  "_integrity": "sha1-azERTJIWIxXf0qwueAnC6s0V3JE=",
+  "_location": "/mescroll-uni",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "mescroll-uni",
+    "name": "mescroll-uni",
+    "escapedName": "mescroll-uni",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/mescroll-uni/download/mescroll-uni-1.3.7.tgz",
+  "_shasum": "6b31114c92162315dfd2ac2e7809c2eacd15dc91",
+  "_spec": "mescroll-uni",
+  "_where": "D:\\liaojunjun\\realFix-phone",
+  "author": {
+    "name": "wenju"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "mescroll的uni-app版本:【wxs+renderjs实现】高性能的下拉刷新上拉加载组件",
+  "license": "MIT",
+  "main": "mescroll-uni.vue",
+  "name": "mescroll-uni",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.3.7"
+}

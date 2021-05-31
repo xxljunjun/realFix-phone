@@ -14,6 +14,13 @@
 			"bounce": "none"
 		}
 	},
+	"style" : {
+			"navigationBarTitleText" : "xxx",
+			"app-plus" : {
+				"bounce" : "none" // 取消APP端iOS回弹,避免与下拉刷新冲突 (可统一配在 'globalStyle')
+			},
+			"mp-alipay":{"allowsBounceVertical":"NO"} // 取消支付宝和钉钉小程序的iOS回弹,避免与下拉刷新冲突 (可统一配在 'globalStyle')
+		},
 	"pages": [
 		{
 			"path": "pages/realFix/Featured",
