@@ -16,10 +16,5 @@ export default {
 </script>
 
 <style>
-/* @import './node_modules/vue-photo-preview/dist/skin.css'; */
-@import './node_modules/viewerjs/dist/viewer.css';
-.pswp{
-	display: none !important;
-	background: rgba(235, 235, 235, 1) !important;
-  }
+@import './styles/viewer.css';
 </style>

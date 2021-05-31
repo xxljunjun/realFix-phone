@@ -9,15 +9,6 @@
     <viewer :images="imgs">
       <img v-for="src in imgs" :src="src.url" :key="src.title" />
     </viewer>
-    <section>
-      <img
-        v-for="src in imgs1"
-        :src="src.url"
-        :key="src.title"
-        :preview="src.preview"
-        :preview-text="src.title"
-      />
-    </section>
     <Picker
       v-if="isReport"
       @toClose="toClosePicker"
@@ -49,14 +40,6 @@ export default {
           title: '图片1',
         },
       ],
-      imgs1: [
-        {
-          url:
-            'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3564877025,796183547&fm=27&gp=0.jpg',
-          title: '图片1',
-          preview: '1',
-        },
-      ],
     }
   },
   components: {
@@ -78,12 +61,12 @@ export default {
   },
 }
 </script>
-
 <style lang="scss" scoped>
 uni-page-body,
 uni-page-refresh {
   height: 100%;
 }
+
 .detail {
   padding-top: 88rpx;
   background: rgba(235, 235, 235, 1);
