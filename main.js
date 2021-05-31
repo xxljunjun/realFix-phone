@@ -4,6 +4,7 @@ import store from './store'
 import Viewer from 'v-viewer'
 // import 'viewerjs/dist/viewer.css'
 import i18n from './src/i18n';
+// import router from './src/router/index.js'
 
 
 Vue.config.productionTip = false
@@ -21,6 +22,7 @@ App.mpType = 'app'
 const app = new Vue({
 	i18n,
 	store,
+	// router,
 	...App
 })
 app.$mount()
