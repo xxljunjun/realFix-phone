@@ -9,6 +9,11 @@
     <viewer :images="imgs">
       <img v-for="src in imgs" :src="src.url" :key="src.title" />
     </viewer>
+    <view>
+      <view>国际化</view>
+      <view>{{ $t('text') }}</view>
+      <view @click="changeLanguage">点我哟</view>
+    </view>
     <Picker
       v-if="isReport"
       @toClose="toClosePicker"
@@ -47,6 +52,10 @@ export default {
     Picker,
   },
   methods: {
+    changeLanguage() {
+      console.log('国际化',this.$i18n)
+       this.$i18n.locale = this.$i18n.locale === 'zh' ? 'en' : 'zh';
+    },
     rightBack() {
       console.log('弹出举报')
       this.isReport = true

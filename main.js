@@ -3,6 +3,8 @@ import App from './App'
 import store from './store'
 import Viewer from 'v-viewer'
 // import 'viewerjs/dist/viewer.css'
+import i18n from './src/i18n';
+
 
 Vue.config.productionTip = false
 Vue.prototype.$store = store
@@ -18,6 +20,7 @@ Vue.component('mescroll-uni', MescrollUni)
 App.mpType = 'app'
 
 const app = new Vue({
+	i18n,
 	store,
 	...App
 })
