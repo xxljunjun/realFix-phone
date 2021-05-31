@@ -7,7 +7,6 @@ import i18n from './src/i18n';
 
 
 Vue.config.productionTip = false
-Vue.prototype.$store = store
 Vue.use(Viewer);
 Viewer.setDefaults({
 	Options: { "inline": false, "button": true, "navbar": false, "title": false, "toolbar": false, "tooltip": false, "movable": false, "zoomable": false, "rotatable": false, "scalable": false, "transition": false, "fullscreen": false, "keyboard": false, "url": "data-source" }

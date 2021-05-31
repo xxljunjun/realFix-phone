@@ -28,6 +28,7 @@
 <script>
 import TopBack from './component/topBack/topBack'
 import Picker from './component/picker'
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -47,14 +48,31 @@ export default {
       ],
     }
   },
+  mounted() {
+    console.log('000000000', this.$store)
+    console.log('11111111111', this.status)
+    /* 
+		1、可以用mapState、mapGetters在computed进行简写。
+		2、可以用mapMutations、mapActions在methods进行简写。
+    3、this.$store.dispatch触发actions上的方法进行调用后端数据。
+    4、this.$store.commit触发mutations上的方法修改state上的变量。
+
+	 */
+  },
+  computed: {
+    //可以通过mapState，mapGetters方法简写代码，直接通过this去访问
+    ...mapState(['status']),
+  },
   components: {
     TopBack,
     Picker,
   },
   methods: {
     changeLanguage() {
-      console.log('国际化',this.$i18n)
-       this.$i18n.locale = this.$i18n.locale === 'zh' ? 'en' : 'zh';
+      console.log('国际化', this.$i18n)
+      this.$i18n.locale = this.$i18n.locale === 'zh' ? 'en' : 'zh'
+      this.$store.commit('toChaneStatus', 11111111111)
+      this.$store.dispatch('toChang', 22222222222)
     },
     rightBack() {
       console.log('弹出举报')

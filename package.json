@@ -14,11 +14,13 @@
     },
     "dependencies": {
         "@dcloudio/uni-ui": "^1.3.0",
+        "axios": "^0.21.1",
         "mescroll-uni": "^1.3.7",
         "sortablejs": "^1.13.0",
         "v-viewer": "^1.5.1",
         "vue-i18n": "^8.24.4",
-        "vue-photo-preview": "^1.1.3"
+        "vue-photo-preview": "^1.1.3",
+        "vuex": "^3.6.2"
     },
     "devDependencies": {
         "sass": "^1.32.12",
