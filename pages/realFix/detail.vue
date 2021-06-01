@@ -9,10 +9,14 @@
     <viewer :images="imgs">
       <img v-for="src in imgs" :src="src.url" :key="src.title" />
     </viewer>
-    <view>
+    <!-- 随意 -->
+    <view class="box">
       <view>国际化</view>
       <view>{{ $t('text') }}</view>
       <view @click="changeLanguage">点我哟</view>
+      <input type="text" class="inp" v-model="city" />
+      <button @click="toSearch" class="btn">查天气</button>
+      <view class="content"></view>
     </view>
     <Picker
       v-if="isReport"
@@ -47,10 +51,11 @@ export default {
           title: '图片1',
         },
       ],
+      city: '',
     }
   },
   mounted() {
-    this.togetSomething()
+    // this.togetSomething()
     // console.log('000000000', this.$store)
     // console.log('11111111111', this.status)
     /* 
@@ -70,6 +75,10 @@ export default {
     Picker,
   },
   methods: {
+    toSearch() {
+      console.log("1111111111'")
+      this.togetSomething()
+    },
     togetSomething() {
       console.log('掉接口前')
       //方法一未封装统一的request
@@ -88,7 +97,7 @@ export default {
 
       //方法二统一封装request
       let params = {
-        city: 'shenzhen',
+        city: this.city,
         appkey: '7a85fc9df58cd155f764e033a257d879',
       }
       getWeather(params).then((res) => {
@@ -134,6 +143,19 @@ uni-page-refresh {
       font-size: 40rpx;
       line-height: 49rpx;
     }
+  }
+}
+.box {
+  .btn {
+    height: 80rpx;
+    width: 300rpx;
+  }
+  .inp {
+    height: 60rpx;
+    width: 400rpx;
+    background: #fff;
+  }
+  content {
   }
 }
 </style>
