@@ -1,4 +1,5 @@
 module.exports = {
+	mode: 'development',
 	// chainWebpack: config => {
 	// 	config.resolve.alias
 	// 		.set('@', resolve('src'))

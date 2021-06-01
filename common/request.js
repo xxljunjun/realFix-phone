@@ -17,16 +17,16 @@ function service(options = {}) {
 		//成功
 		options.success = (res) => {
 
-			if (Number(res.data.code) == 200) {  //请求成功
-				resolved(res.data.data);
-			} else {
-				uni.showToast({
-					icon: 'none',
-					duration: 3000,
-					title: `${res.data.msg}`
-				});
-				rejected(res.data.msg);//错误
-			}
+			// if (Number(res.data.code) == 200) {  //请求成功
+			// 	resolved(res.data.data);
+			// } else {
+			// 	uni.showToast({
+			// 		icon: 'none',
+			// 		duration: 3000,
+			// 		title: `${res.data.msg}`
+			// 	});
+			// 	rejected(res.data.msg);//错误
+			// }
 
 		}
 		//错误

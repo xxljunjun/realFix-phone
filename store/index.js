@@ -7,6 +7,7 @@ const store = new Vuex.Store({
 	state: {
 		// state是存储中心，所有需要被共享或缓存的数据，都在这里定义
 		status: true,
+		token: "7758258",
 	},
 	getters: {
 		// getters相当于组件的计算属性，它与state相关，当它所关系的state变量发生变化时，会自动重新计算

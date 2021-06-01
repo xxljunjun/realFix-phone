@@ -1,8 +1,6 @@
 import request from "../../common/request.js";
 
-//function service(){
 
-// }
 //请求天气
 export function getWeather(params) {
 	return request({
