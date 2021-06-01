@@ -29,6 +29,7 @@
 import TopBack from './component/topBack/topBack'
 import Picker from './component/picker'
 import { mapState } from 'vuex'
+import { getWeather } from '../../src/utils/api.js'
 export default {
   data() {
     return {
@@ -71,17 +72,27 @@ export default {
   methods: {
     togetSomething() {
       console.log('掉接口前')
-      uni.request({
-        url:
-          'http://localhost:8080/he/freeweather?city=beijing&appkey=7a85fc9df58cd155f764e033a257d879',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded', //自定义请求头信息
-        },
-        //请求成功后返回
-        success: (res) => {
-          // 请求成功之后将数据给Info
-          console.log('0000000000000', res)
-        },
+      //方法一未封装统一的request
+      // uni.request({
+      //   url:
+      //     'http://localhost:8080/he/freeweather?city=beijing&appkey=7a85fc9df58cd155f764e033a257d879',
+      //   header: {
+      //     'content-type': 'application/x-www-form-urlencoded', //自定义请求头信息
+      //   },
+      //   //请求成功后返回
+      //   success: (res) => {
+      //     // 请求成功之后将数据给Info
+      //     console.log('0000000000000', res)
+      //   },
+      // })
+
+      //方法二统一封装request
+      let params = {
+        city: 'shenzhen',
+        appkey: '7a85fc9df58cd155f764e033a257d879',
+      }
+      getWeather(params).then((res) => {
+        console.log('天气', res)
       })
     },
     changeLanguage() {
