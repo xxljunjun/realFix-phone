@@ -16,6 +16,7 @@
       <view @click="changeLanguage">点我哟</view>
       <input type="text" class="inp" v-model="city" />
       <button @click="toSearch" class="btn">查天气</button>
+      <!-- <u-button shape="square">乌啼</u-button> -->
       <view class="content"></view>
     </view>
     <Picker

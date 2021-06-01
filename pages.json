@@ -2,6 +2,7 @@
 	"easycom": {
 		//引入的组件无需在页面内import，也不需要在components内声明，即可在任意页面使用
 		"autoscan": true,
+		// "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
 		"custom": {
 			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
 		}
@@ -14,13 +15,15 @@
 			"bounce": "none"
 		}
 	},
-	"style" : {
-			"navigationBarTitleText" : "xxx",
-			"app-plus" : {
-				"bounce" : "none" // 取消APP端iOS回弹,避免与下拉刷新冲突 (可统一配在 'globalStyle')
-			},
-			"mp-alipay":{"allowsBounceVertical":"NO"} // 取消支付宝和钉钉小程序的iOS回弹,避免与下拉刷新冲突 (可统一配在 'globalStyle')
+	"style": {
+		"navigationBarTitleText": "xxx",
+		"app-plus": {
+			"bounce": "none" // 取消APP端iOS回弹,避免与下拉刷新冲突 (可统一配在 'globalStyle')
 		},
+		"mp-alipay": {
+			"allowsBounceVertical": "NO"
+		} // 取消支付宝和钉钉小程序的iOS回弹,避免与下拉刷新冲突 (可统一配在 'globalStyle')
+	},
 	"pages": [
 		{
 			"path": "pages/realFix/Featured",

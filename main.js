@@ -8,6 +8,8 @@ import i18n from './src/i18n';
 
 // import http from '@/utils/api'
 // Vue.prototype.$http = http
+import uView from "uview-ui";
+Vue.use(uView);
 
 Vue.config.productionTip = false
 Vue.use(Viewer);
