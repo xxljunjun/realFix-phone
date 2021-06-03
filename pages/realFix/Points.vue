@@ -67,6 +67,7 @@
     <Guess />
     <TopGame />
     <MoreGame ref="moreGame" :isFixed="isFixed" />
+    <TabBar />
   </view>
 </template>
 
@@ -74,11 +75,13 @@
 import Guess from './component/tao/guess'
 import TopGame from './component/tao/topGame'
 import MoreGame from './component/tao/moreGame'
+import TabBar from './component/tao/tabBar-buttom'
 export default {
   components: {
     Guess,
     TopGame,
     MoreGame,
+    TabBar,
   },
   props: {},
   data() {
@@ -247,6 +250,7 @@ export default {
   font-size: 26rpx;
   background: #fff;
   padding-top: 90rpx;
+  padding-bottom: 100rpx;
   .top {
     height: 90rpx;
     width: 750rpx;
