@@ -82,7 +82,7 @@ export default {
   }
   .title {
     padding: 0 20rpx;
-    width: 300rpx;
+    width: 340rpx;
     color: #000;
     font-size: 28rpx;
     line-height: 38rpx;

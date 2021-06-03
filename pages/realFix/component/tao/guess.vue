@@ -150,18 +150,20 @@ export default {
       // }
 
       //方法二
-      let mystyle = this.$refs.sliders.$el.style
-      // console.log('11', mystyle)
-      if (e.detail.current == 0) {
-        // console.log('000')
-        mystyle.left = 0
-      } else if (e.detail.current == 1) {
-        // console.log('111')
-        mystyle.left = 50 + 'px'
-      } else if (e.detail.current == 2) {
-        // console.log('2222')
-        mystyle.left = 100 + 'px'
-      }
+      this.$nextTick(() => {
+        let mystyle = this.$refs.sliders.$el.style
+        // console.log('11', mystyle)
+        if (e.detail.current == 0) {
+          // console.log('000')
+          mystyle.left = 0
+        } else if (e.detail.current == 1) {
+          // console.log('111')
+          mystyle.left = 50 + 'px'
+        } else if (e.detail.current == 2) {
+          // console.log('2222')
+          mystyle.left = 100 + 'px'
+        }
+      })
     },
   },
   components: {},

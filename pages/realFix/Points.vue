@@ -60,7 +60,7 @@
           </view>
         </scroll-view>
         <view class="gun">
-          <view class="slider" ref="slider"></view>
+          <view class="slider" id="slider"></view>
         </view>
       </view>
     </view>
@@ -165,17 +165,19 @@ export default {
       // console.log('111')
       // console.log(document.documentElement.scrollTop, this.$refs.myswiper.$el.offsetHeight)// 获取滚动距离和轮播高度
       // if(滚动距离>=轮播的高度)
-      console.log(this.$refs.moreGame.$el.offsetHeight)
-      if (
-        document.documentElement.scrollTop >=
-        this.$refs.moreGame.$el.offsetHeight - 620
-      ) {
-        // console.log('fixed')
-        this.isFixed = true
-      } else {
-        // console.log('unfixed')
-        this.isFixed = false
-      }
+      this.$nextTick(() => {
+        console.log(this.$refs.moreGame.$el.offsetHeight)
+        if (
+          document.documentElement.scrollTop >=
+          this.$refs.moreGame.$el.offsetHeight - 490
+        ) {
+          // console.log('fixed')
+          this.isFixed = true
+        } else {
+          // console.log('unfixed')
+          this.isFixed = false
+        }
+      })
     },
     scroll(e) {
       //方法一
@@ -193,7 +195,6 @@ export default {
       // }
 
       //方法二
-      // console.log(this.$refs.slider.$el.style)
       let mystyle = this.$refs.slider.$el.style
       mystyle.left = e.detail.scrollLeft / 8 + 'px'
       if (e.detail.scrollLeft == 0) {
@@ -230,6 +231,8 @@ export default {
   //未选择
   background: #fff;
   margin-right: 16rpx;
+  width: 8rpx;
+  height: 8rpx;
 }
 /deep/.uni-swiper-dot-active {
   //已选择
@@ -243,6 +246,7 @@ export default {
 .Tindex {
   font-size: 26rpx;
   background: #fff;
+  padding-top: 90rpx;
   .top {
     height: 90rpx;
     width: 750rpx;

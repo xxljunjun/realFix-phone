@@ -88,7 +88,7 @@ export default {
           id: 3,
           gameNmae: '口袋妖怪复刻',
           path: '/static/junjun/Tsize_11.jpg',
-          title: '夏日杯32强突破资源号开局',
+          title: '夏日杯32强突破资源号',
           type: '安卓TT玩',
           who: '全部区服',
           dtc1: '寄售',
@@ -204,6 +204,9 @@ export default {
         height: 95rpx;
         margin-right: 54rpx;
         position: relative;
+        &:first-child {
+          margin-left: 20rpx;
+        }
         .line {
           height: 10rpx;
           width: 85rpx;
