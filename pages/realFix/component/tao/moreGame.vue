@@ -174,7 +174,7 @@ export default {
 .fixed {
   position: fixed;
   left: 0px;
-  top: 0px;
+  top: 90rpx;
   z-index: 99;
 }
 @mixin find-ellipsis {
@@ -190,7 +190,7 @@ export default {
 }
 .moreGame {
   background: #f7f7f7;
-  padding: 0 25rpx;
+  // padding: 0 25rpx;
   .aline {
     height: 95rpx;
     width: 750rpx;
@@ -225,6 +225,7 @@ export default {
     }
   }
   .content {
+    padding: 0 25rpx;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

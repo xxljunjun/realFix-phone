@@ -168,7 +168,7 @@ export default {
       console.log(this.$refs.moreGame.$el.offsetHeight)
       if (
         document.documentElement.scrollTop >=
-        this.$refs.moreGame.$el.offsetHeight - 600
+        this.$refs.moreGame.$el.offsetHeight - 620
       ) {
         // console.log('fixed')
         this.isFixed = true
@@ -251,6 +251,10 @@ export default {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
     .search {
       width: 30rpx;
       height: 30rpx;
