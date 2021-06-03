@@ -66,7 +66,7 @@
     </view>
     <Guess />
     <TopGame />
-    <MoreGame />
+    <MoreGame ref="moreGame" :isFixed="isFixed" />
   </view>
 </template>
 
@@ -83,6 +83,7 @@ export default {
   props: {},
   data() {
     return {
+      isFixed: false,
       animate: false,
       list: [
         '成功购买口袋妖怪复刻',
@@ -157,8 +158,25 @@ export default {
   },
   mounted() {
     this.scrollEvent()
+    window.onscroll = this.handScroll // 不能加（），否则会返回undefined
   },
   methods: {
+    handScroll() {
+      // console.log('111')
+      // console.log(document.documentElement.scrollTop, this.$refs.myswiper.$el.offsetHeight)// 获取滚动距离和轮播高度
+      // if(滚动距离>=轮播的高度)
+      console.log(this.$refs.moreGame.$el.offsetHeight)
+      if (
+        document.documentElement.scrollTop >=
+        this.$refs.moreGame.$el.offsetHeight - 600
+      ) {
+        // console.log('fixed')
+        this.isFixed = true
+      } else {
+        // console.log('unfixed')
+        this.isFixed = false
+      }
+    },
     scroll(e) {
       //方法一
       //e.detail.scrollLeft

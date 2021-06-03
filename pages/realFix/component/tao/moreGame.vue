@@ -1,7 +1,7 @@
 <template>
   <view class="moreGame">
     <!-- 选择更多游戏 -->
-    <view class="aline">
+    <view class="aline" :class="sonIsFixed ? 'fixed' : ''">
       <scroll-view class="scrollView" :scroll-x="true" :show-scrollbar="true">
         <view
           class="namebox"
@@ -34,8 +34,20 @@ export default {
   components: {
     Box,
   },
+  props: {
+    isFixed: Boolean,
+    default: false,
+  },
+  watch: {
+    isFixed: {
+      handler(newval) {
+        this.sonIsFixed = newval
+      },
+    },
+  },
   data() {
     return {
+      sonIsFixed: false,
       gameNameArr: [
         { id: 1, gameNmae: '口袋妖怪复刻', select: true },
         { id: 2, gameNmae: '王者荣耀', select: false },
@@ -142,6 +154,7 @@ export default {
       ],
     }
   },
+  mounted() {},
   methods: {
     toSelectGame(id) {
       console.log('1', id)
@@ -158,6 +171,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fixed {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 99;
+}
 @mixin find-ellipsis {
   overflow: hidden;
   white-space: nowrap;
