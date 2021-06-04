@@ -107,8 +107,8 @@ export default {
         textSuccess: '刷新完成',
         beforeEndDelay: 1000,
         textColor: '#000',
-        offset: 180,
-        // bgColor: 'url(/static/junjun/bg.jpg) 0 75rpx/100% 3%',
+        offset: 100,
+        bgColor: 'url(/static/junjun/bg.jpg) 0 60rpx/100% 3%',
         // textErr:"",
         use: true, // 是否启用下拉刷新; 默认true
         auto: false, // 是否在初始化完毕之后自动执行下拉刷新的回调; 默认true
@@ -305,25 +305,22 @@ export default {
 //   padding-top: 90px !important;
 //   padding-bottom: 100px !important;
 // }
-/deep/.mescroll-downwarp {
-  // background: url('/static/junjun/bg.jpg') no-repeat fixed 90% 80% !important;
-  // background-repeat: no-repeat !important;
-  // background: url('/static/junjun/bg.jpg') no-repeat fixed top 0 80% !important;
-}
+// /deep/.mescroll-downwarp {
+// background: url('/static/junjun/bg.jpg') no-repeat fixed 90% 80% !important;
+// background-repeat: no-repeat !important;
+// background: url('/static/junjun/bg.jpg') no-repeat fixed top 0 80% !important;
+// }
 /deep/.downwarp-content {
-  min-height: 430rpx !important;
+  min-height: 120rpx !important;
   bottom: -50rpx !important;
   color: #fff;
   font-size: 20rpx;
-  background-repeat: no-repeat !important;
-  background: url('/static/junjun/bg.jpg') no-repeat scroll 90% 80% !important;
-  position: relative;
-  .downwarp-tip {
-    position: absolute;
-    bottom: 80rpx;
-    z-index: 99;
-    left: 295rpx;
-  }
+  // position: relative;
+  // .downwarp-tip {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 160rpx;
+  // }
   .mescroll-wxs-progress {
     display: none;
   }
