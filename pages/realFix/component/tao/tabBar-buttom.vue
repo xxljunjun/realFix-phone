@@ -1,23 +1,23 @@
 <template>
   <view class="tabBar">
     <view class="btn">
-      <image src="/static/junjun/Tsize_06.gif" class="icon" />
+      <image src="/static/junjun/tao_52.jpg" class="icon" />
       <view>首页</view>
     </view>
     <view class="btn">
-      <image src="/static/junjun/Tsize_06.gif" class="icon" />
+      <image src="/static/junjun/tao_54.gif" class="icon" />
       <view>我要买</view>
     </view>
     <view class="btn-other">
-      <image src="/static/junjun/Tsize_06.gif" class="icon" />
+      <image src="/static/junjun/tao_43.gif" class="icon" />
       <view>我要卖</view>
     </view>
     <view class="btn">
-      <image src="/static/junjun/Tsize_06.gif" class="icon" />
+      <image src="/static/junjun/tao_46.gif" class="icon" />
       <view>消息</view>
     </view>
     <view class="btn">
-      <image src="/static/junjun/Tsize_06.gif" class="icon" />
+      <image src="/static/junjun/tao_49.jpg" class="icon" />
       <view>我i的</view>
     </view>
   </view>
@@ -51,6 +51,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 20rpx;
+  color: #000;
   .btn {
     text-align: center;
   }
@@ -64,6 +66,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 2rpx solid #dbdbdb;
+    box-shadow: 0rpx 0rpx 10rpx #ccc;
     .icon {
       margin-bottom: 12rpx;
     }

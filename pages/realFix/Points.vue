@@ -186,26 +186,26 @@ export default {
       //方法一
       //e.detail.scrollLeft
       //440
-      // let slider = document.getElementsByClassName('slider')[0]
-      // // console.log(slider)
-      // // console.log(e.detail.scrollLeft / 8 + 'px')
-      // slider.style.left = e.detail.scrollLeft / 8 + 'px'
-      // if (e.detail.scrollLeft == 0) {
-      //   slider.style.left = 0
-      // }
-      // if (e.detail.scrollLeft == 440) {
-      //   slider.style.left = '50px'
-      // }
-
-      //方法二
-      let mystyle = this.$refs.slider.$el.style
-      mystyle.left = e.detail.scrollLeft / 8 + 'px'
+      let slider = document.getElementsByClassName('slider')[0]
+      // console.log(slider)
+      // console.log(e.detail.scrollLeft / 8 + 'px')
+      slider.style.left = e.detail.scrollLeft / 8 + 'px'
       if (e.detail.scrollLeft == 0) {
-        mystyle.left = 0
+        slider.style.left = 0
       }
       if (e.detail.scrollLeft == 440) {
-        mystyle.left = 50 + 'px'
+        slider.style.left = '50px'
       }
+
+      //方法二
+      // let mystyle = this.$refs.slider.$el.style
+      // mystyle.left = e.detail.scrollLeft / 8 + 'px'
+      // if (e.detail.scrollLeft == 0) {
+      //   mystyle.left = 0
+      // }
+      // if (e.detail.scrollLeft == 440) {
+      //   mystyle.left = 50 + 'px'
+      // }
     },
     scrollEvent() {
       let that = this

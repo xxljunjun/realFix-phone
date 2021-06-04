@@ -10,13 +10,13 @@
     <view class="btn-box">
       <view class="btn">
         查看全部游戏
-        <image src="/static/junjun/Tsize_06.gif" class="quan" />
+        <image src="/static/junjun/tao_32.gif" class="quan" />
       </view>
     </view>
     <view class="title">专属福利</view>
     <view class="img-box">
-      <image src="/static/junjun/Tsize_11.jpg" class="left-img imgs" />
-      <image src="/static/junjun/Tsize_11.jpg" class="right-img imgs" />
+      <image src="/static/junjun/tao_36.gif" class="left-img imgs" />
+      <image src="/static/junjun/tao_38.gif" class="right-img imgs" />
     </view>
   </view>
 </template>
@@ -26,18 +26,18 @@ export default {
   data() {
     return {
       toGameArr: [
-        { ia: 1, path: '/static/junjun/Tsize_26.gif', text: '口袋妖怪复刻' },
-        { ia: 2, path: '/static/junjun/Tsize_29.gif', text: '王者荣耀' },
-        { ia: 3, path: '/static/junjun/Tsize_31.gif', text: '拳皇97' },
-        { ia: 4, path: '/static/junjun/Tsize_34.gif', text: '三国战记' },
-        { ia: 5, path: '/static/junjun/Tsize_46.gif', text: '妖神记' },
-        { ia: 6, path: '/static/junjun/Tsize_47.gif', text: '漆黑的魅影' },
-        { ia: 7, path: '/static/junjun/Tsize_48.gif', text: '传奇' },
-        { ia: 8, path: '/static/junjun/Tsize_50.gif', text: '口袋妖怪复刻' },
-        { ia: 9, path: '/static/junjun/Tsize_29.gif', text: '口袋妖怪复刻' },
-        { ia: 10, path: '/static/junjun/Tsize_48.gif', text: '口袋妖怪复刻' },
-        { ia: 11, path: '/static/junjun/Tsize_47.gif', text: '口袋妖怪复刻' },
-        { ia: 12, path: '/static/junjun/Tsize_46.gif', text: '口袋妖怪复刻' },
+        { ia: 1, path: '/static/junjun/tao_03.gif', text: '口袋妖怪复刻' },
+        { ia: 2, path: '/static/junjun/tao_05.gif', text: '王者荣耀' },
+        { ia: 3, path: '/static/junjun/tao_07.gif', text: '拳皇97' },
+        { ia: 4, path: '/static/junjun/tao_09.gif', text: '三国战记' },
+        { ia: 5, path: '/static/junjun/tao_15.gif', text: '妖神记' },
+        { ia: 6, path: '/static/junjun/tao_16.gif', text: '漆黑的魅影' },
+        { ia: 7, path: '/static/junjun/tao_17.gif', text: '传奇' },
+        { ia: 8, path: '/static/junjun/tao_18.gif', text: '口袋妖怪复刻' },
+        { ia: 9, path: '/static/junjun/tao_23.gif', text: '口袋妖怪复刻' },
+        { ia: 10, path: '/static/junjun/tao_24.gif', text: '口袋妖怪复刻' },
+        { ia: 11, path: '/static/junjun/tao_25.gif', text: '口袋妖怪复刻' },
+        { ia: 12, path: '/static/junjun/tao_26.gif', text: '口袋妖怪复刻' },
       ],
     }
   },
@@ -104,7 +104,7 @@ export default {
     .quan {
       width: 26rpx;
       height: 26rpx;
-      margin-left: 8rpx;
+      margin-left: 10rpx;
       position: relative;
       top: 2rpx;
     }
