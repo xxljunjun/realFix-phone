@@ -15,6 +15,7 @@
       @init="mescrollInit"
       @down="downCallback"
       @up="upCallback"
+      @scroll="handScroll"
       :down="downOption"
       :up="upOption"
       top="90"
@@ -115,6 +116,7 @@ export default {
       },
       // 上拉加载的常用配置
       upOption: {
+        onScroll: true,
         use: true, // 是否启用上拉加载; 默认true
         auto: false, // 是否在初始化完毕之后自动执行上拉加载的回调; 默认true
         page: {
@@ -211,7 +213,7 @@ export default {
   },
   mounted() {
     this.scrollEvent()
-    window.onscroll = this.handScroll // 不能加（），否则会返回undefined
+    // window.onscroll = this.handScroll // 不能加（），否则会返回undefined
   },
   methods: {
     //滚动组件初始化
@@ -231,23 +233,24 @@ export default {
       //  this.mescroll.endErr()
       this.mescroll.endByPage(0, 0)
     },
-    handScroll() {
-      // console.log('111')
+    handScroll(mescroll) {
       // console.log(document.documentElement.scrollTop, this.$refs.myswiper.$el.offsetHeight)// 获取滚动距离和轮播高度
       // if(滚动距离>=轮播的高度)
-      this.$nextTick(() => {
-        console.log(this.$refs.moreGame.$el.offsetHeight)
-        if (
-          document.documentElement.scrollTop >=
-          this.$refs.moreGame.$el.offsetHeight - 490
-        ) {
-          // console.log('fixed')
-          this.isFixed = true
-        } else {
-          // console.log('unfixed')
-          this.isFixed = false
-        }
-      })
+      // console.log(this.$refs.moreGame.$el.offsetHeight)
+      // console.log(document.documentElement.scrollTop)
+      // console.log(
+      //   '当前滚动条的位置:' +
+      //     mescroll.scrollTop +
+      //     ', 是否向上滑:' +
+      //     mescroll.isScrollUp
+      // )
+      if (mescroll.scrollTop >= this.$refs.moreGame.$el.offsetHeight - 460) {
+        // console.log('fixed')
+        this.isFixed = true
+      } else {
+        // console.log('unfixed')
+        this.isFixed = false
+      }
     },
     scroll(e) {
       //方法一

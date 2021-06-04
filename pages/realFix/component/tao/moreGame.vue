@@ -9,9 +9,11 @@
           :key="index"
           @click="toSelectGame(item.id)"
         >
-          <text :class="item.select ? 'select-name' : 'noSelect'">{{
-            item.gameNmae
-          }}</text>
+          <text
+            :class="item.select ? 'select-name' : 'noSelect'"
+            :id="'namebox_' + item.id"
+            >{{ item.gameNmae }}</text
+          >
           <view class="line" v-if="item.select"></view>
         </view>
       </scroll-view>
@@ -157,7 +159,7 @@ export default {
   mounted() {},
   methods: {
     toSelectGame(id) {
-      console.log('1', id)
+      // console.log('1', id)
       this.gameNameArr.forEach((val) => {
         if (id == val.id) {
           val.select = true
@@ -165,6 +167,16 @@ export default {
           val.select = false
         }
       })
+
+      //方法一
+      // 获取点击的按钮对应页面的id
+      var PageId = document.querySelector('#namebox_' + id)
+      console.log(PageId.offsetLeft)
+      // 使用平滑属性，滑动到上方获取的距离
+      // 下方我只设置了top，当然 你也可以加上 left 让他横向滑动
+      // widow 根据浏览器滚动条，如果你是要在某个盒子里面产生滑动，记得修改
+      // PageId.scrollIntoView()
+      PageId.scrollIntoView({ inline: 'center', behavior: 'smooth' })
     },
   },
 }
