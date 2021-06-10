@@ -19,6 +19,7 @@
       <!-- <u-button shape="square">乌啼</u-button> -->
       <view class="content"></view>
     </view>
+    <view class="tipbox" @click="addClass"></view>
     <Picker
       v-if="isReport"
       @toClose="toClosePicker"
@@ -47,8 +48,7 @@ export default {
       ],
       imgs: [
         {
-          url:
-            'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=85690711,3884201894&fm=27&gp=0.jpg',
+          url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=85690711,3884201894&fm=27&gp=0.jpg',
           title: '图片1',
         },
       ],
@@ -76,6 +76,7 @@ export default {
     Picker,
   },
   methods: {
+    addClass() {},
     toSearch() {
       console.log("1111111111'")
       this.togetSomething()
@@ -130,7 +131,15 @@ uni-page-body,
 uni-page-refresh {
   height: 100%;
 }
-
+.tipbox {
+  height: 100rpx;
+  width: 100rpx;
+  background: red;
+  transition: 1s;
+  -webkit-transform: translate(200px, 200px) scale(0);
+  // -webkit-transform: scale(0);
+  // -webkit-transform: translate(-300px, -300px) scale(0);
+}
 .detail {
   padding-top: 88rpx;
   background: rgba(235, 235, 235, 1);
