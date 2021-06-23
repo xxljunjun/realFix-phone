@@ -143,6 +143,14 @@
 			}
 		},
 		{
+			"path": "pages/realFix/webView",
+			"style": {
+				"navigationStyle": "custom",
+				"animationDuration": 100,
+				"animationType": "none"
+			}
+		},
+		{
 			"path": "pages/realFix/component/NewPost/version",
 			"style": {
 				"navigationStyle": "custom",

@@ -88,6 +88,10 @@ export default {
       console.log('todetaol', id)
       // this.$router.push("/")
       //跳转到详情页
+      let url = 'http://www.baidu.com'
+      uni.navigateTo({
+        url: 'webView?url=' + url,
+      })
     },
     getBoxDetail() {
       this.detailArr = [
@@ -97,8 +101,7 @@ export default {
             title: '19 ercedes-Benz GLS450 steering systems failed',
             Vehicle: '2003 BMW 530i 3.0L',
             dtcarr: ['P0171', 'P0174', 'P0101'],
-            text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
+            text: 'The customer states the check engine light is on and the vehicle exhibits a hard start ',
             author: 'Milan Collier',
             num1: '22',
             num2: '33',
@@ -115,8 +118,7 @@ export default {
             title: '19 ercedes-Benz GLS450 steering systems failed',
             Vehicle: '2003 BMW 530i 3.0L',
             dtcarr: ['P0171', 'P0174', 'P0101'],
-            text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
+            text: 'The customer states the check engine light is on and the vehicle exhibits a hard start ',
             author: 'Milan Collier',
             num1: '22',
             num2: '33',
@@ -133,8 +135,7 @@ export default {
             title: '19 ercedes-Benz GLS450 steering systems failed',
             Vehicle: '2003 BMW 530i 3.0L',
             dtcarr: ['P0171', 'P0174', 'P0101'],
-            text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
+            text: 'The customer states the check engine light is on and the vehicle exhibits a hard start ',
             author: 'Milan Collier',
             num1: '22',
             num2: '33',
@@ -151,8 +152,7 @@ export default {
             title: '19 ercedes-Benz GLS450 steering systems failed',
             Vehicle: '2003 BMW 530i 3.0L',
             dtcarr: ['P0171', 'P0174', 'P0101'],
-            text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
+            text: 'The customer states the check engine light is on and the vehicle exhibits a hard start ',
             author: 'Milan Collier',
             num1: '22',
             num2: '33',
@@ -169,8 +169,7 @@ export default {
             title: '19 ercedes-Benz GLS450 steering systems failed',
             Vehicle: '2003 BMW 530i 3.0L',
             dtcarr: ['P0171', 'P0174', 'P0101'],
-            text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
+            text: 'The customer states the check engine light is on and the vehicle exhibits a hard start ',
             author: 'Milan Collier',
             num1: '22',
             num2: '33',
@@ -187,8 +186,7 @@ export default {
             title: '19 ercedes-Benz GLS450 steering systems failed',
             Vehicle: '2003 BMW 530i 3.0L',
             dtcarr: ['P0171', 'P0174', 'P0101'],
-            text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
+            text: 'The customer states the check engine light is on and the vehicle exhibits a hard start ',
             author: 'Milan Collier',
             num1: '22',
             num2: '33',
@@ -205,8 +203,7 @@ export default {
             title: '19 ercedes-Benz GLS450 steering systems failed',
             Vehicle: '2003 BMW 530i 3.0L',
             dtcarr: ['P0171', 'P0174', 'P0101'],
-            text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
+            text: 'The customer states the check engine light is on and the vehicle exhibits a hard start ',
             author: 'Milan Collier',
             num1: '22',
             num2: '33',
@@ -223,8 +220,7 @@ export default {
             title: '19 ercedes-Benz GLS450 steering systems failed',
             Vehicle: '2003 BMW 530i 3.0L',
             dtcarr: ['P0171', 'P0174', 'P0101'],
-            text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
+            text: 'The customer states the check engine light is on and the vehicle exhibits a hard start ',
             author: 'Milan Collier',
             num1: '22',
             num2: '33',
