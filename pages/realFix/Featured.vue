@@ -60,6 +60,7 @@
       <view> <text class="num">8</text>new diagnostic cases are awaited.</view>
     </view>
     <!-- 自定义底部导航栏 -->
+    <Loading :loadingStatus="loadingStatus"/>
     <BottomTabBar current="featured" />
     <ChooseMask v-if="ischooseMask" @toClose="toClose" title="All Makes" />
   </view>
@@ -67,12 +68,14 @@
 
 <script>
 import Box from './component/Box'
+import Loading from './component/common/loading'
 import SearchTopBack from './component/topBack/searchTopBack'
 import BottomTabBar from '../components/bottom-tabBar'
 import ChooseMask from './component/chooseMask'
 export default {
   data() {
     return {
+      loadingStatus:true,
       paopaoStatus: true,
       makeArr: [
         { id: 1, makeName: 'GM', ischecked: false },
@@ -121,9 +124,13 @@ export default {
     Box,
     BottomTabBar,
     ChooseMask,
+    Loading
   },
   mounted() {
     this.getHomeList()
+    setTimeout(()=>{
+      this.loadingStatus = false
+    },2000)
   },
   onShow() {
     this.paopaoStatus = true

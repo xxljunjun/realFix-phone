@@ -6,6 +6,7 @@ import Viewer from 'v-viewer'
 import i18n from './src/i18n';
 // import router from './src/router/index.js'
 
+
 // import http from '@/utils/api'
 // Vue.prototype.$http = http
 import uView from "uview-ui";
@@ -20,6 +21,10 @@ Viewer.setDefaults({
 
 import MescrollUni from "@/pages/mescroll-uni/mescroll-uni.vue"
 Vue.component('mescroll-uni', MescrollUni)
+
+//全局注册loading组件
+import Loading from "@/pages/realFix/component/common/loading.vue"
+Vue.component('myLoading', Loading)
 
 App.mpType = 'app'
 

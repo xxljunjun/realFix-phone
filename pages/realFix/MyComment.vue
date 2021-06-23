@@ -3,7 +3,9 @@
     <TopBack title="MyComment" />
     <view class="noData">
       <NoData types="4" />
+      1111111
     </view>
+    <myLoading/>
   </view>
 </template>
 
