@@ -26,5 +26,13 @@ drag拖拽功能
 ```
 
 # 图片和小icon因网络差无法加载时候显示的图片
-仿
-
++ 小icon可以打包成base64
+vue.confige配置（在无网络的状态下也能看到小icon）把小icon打包成base64
+```
+config.module
+        .rule('images')
+            .use('url-loader')
+            .loader('url-loader')
+            .tap(options => Object.assign(options, { limit: 20000 }))
+```
++ 大图片网络差的时候要怎么显示图片呢？
