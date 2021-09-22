@@ -6,54 +6,57 @@
         >The failure code of 2016 Mercedes-benz E300L is P064104</view
       >
     </view>
-    <viewer :images="imgs">
+    <image src="../../static/uni.png" class="uni-img" @tap="showImage"></image>
+    <!-- <viewer :images="imgs">
       <img v-for="src in imgs" :src="src.url" :key="src.title" />
-    </viewer>
+    </viewer> -->
     <!-- 随意 -->
-    <view class="box">
+    <!-- <view class="box">
       <view>国际化</view>
-      <view>{{ $t('text') }}</view>
+      <view>{{ $t("text") }}</view>
       <view @click="changeLanguage">点我哟</view>
       <input type="text" class="inp" v-model="city" />
       <button @click="toSearch" class="btn">查天气</button>
-      <!-- <u-button shape="square">乌啼</u-button> -->
       <view class="content"></view>
-    </view>
-    <view class="tipbox" @click="addClass"></view>
-    <Picker
+    </view> -->
+    <!-- <view class="tipbox" @click="addClass"></view> -->
+    <!-- <Picker
       v-if="isReport"
       @toClose="toClosePicker"
       @submit="submit"
       title="Report"
       :listArr="reportListArr"
       types="report"
-    />
+    /> -->
+    <BigImg ref="bigImg" @closeImg="closeImg" />
   </view>
 </template>
 
 <script>
-import TopBack from './component/topBack/topBack'
-import Picker from './component/picker'
-import { mapState } from 'vuex'
-import { getWeather } from '../../src/utils/api.js'
+import TopBack from "./component/topBack/topBack";
+// import Picker from "./component/picker";
+import { mapState } from "vuex";
+import { getWeather } from "../../src/utils/api.js";
+import BigImg from "../components/bigImg.vue";
 export default {
   data() {
     return {
       isReport: false,
       reportListArr: [
-        { id: 1, system: 'Content Quantity Needs ', ischeck: false },
-        { id: 2, system: 'Inaccurate Article', ischeck: false },
-        { id: 3, system: 'Advertisement', ischeck: false },
-        { id: 4, system: 'Inappropriate Content', ischeck: false },
+        { id: 1, system: "Content Quantity Needs ", ischeck: false },
+        { id: 2, system: "Inaccurate Article", ischeck: false },
+        { id: 3, system: "Advertisement", ischeck: false },
+        { id: 4, system: "Inappropriate Content", ischeck: false },
       ],
       imgs: [
         {
-          url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=85690711,3884201894&fm=27&gp=0.jpg',
-          title: '图片1',
+          url:
+            "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=85690711,3884201894&fm=27&gp=0.jpg",
+          title: "图片1",
         },
       ],
-      city: '',
-    }
+      city: "",
+    };
   },
   mounted() {
     // this.togetSomething()
@@ -69,20 +72,25 @@ export default {
   },
   computed: {
     //可以通过mapState，mapGetters方法简写代码，直接通过this去访问
-    ...mapState(['status']),
+    ...mapState(["status"]),
   },
   components: {
     TopBack,
-    Picker,
+    // Picker,
+    BigImg,
   },
   methods: {
+    closeImg() {},
+    showImage() {
+      console.log("点击图片");
+      this.$refs.bigImg.showImage("../../static/uni.png");
+    },
     addClass() {},
     toSearch() {
-      console.log("1111111111'")
-      this.togetSomething()
+      this.togetSomething();
     },
     togetSomething() {
-      console.log('掉接口前')
+      console.log("掉接口前");
       //方法一未封装统一的request
       // uni.request({
       //   url:
@@ -100,36 +108,37 @@ export default {
       //方法二统一封装request
       let params = {
         city: this.city,
-        appkey: '7a85fc9df58cd155f764e033a257d879',
-      }
+        appkey: "7a85fc9df58cd155f764e033a257d879",
+      };
       getWeather(params).then((res) => {
-        console.log('天气', res)
-      })
+        console.log("天气", res);
+      });
     },
     changeLanguage() {
-      console.log('国际化', this.$i18n)
-      this.$i18n.locale = this.$i18n.locale === 'zh' ? 'en' : 'zh'
-      this.$store.commit('toChaneStatus', 11111111111)
-      this.$store.dispatch('toChang', 22222222222)
+      console.log("国际化", this.$i18n);
+      this.$i18n.locale = this.$i18n.locale === "zh" ? "en" : "zh";
     },
     rightBack() {
-      console.log('弹出举报')
-      this.isReport = true
+      console.log("弹出举报");
+      this.isReport = true;
     },
     toClosePicker() {
-      this.isReport = false
+      this.isReport = false;
     },
     submit(val) {
-      console.log('提交意见', val)
-      this.isReport = false
+      console.log("提交意见", val);
+      this.isReport = false;
     },
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 uni-page-body,
 uni-page-refresh {
   height: 100%;
+}
+.uni-img {
+  margin-left: 60rpx;
 }
 .tipbox {
   height: 100rpx;
