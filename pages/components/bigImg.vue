@@ -1,6 +1,6 @@
 <template>
   <view class="scaleImg" v-if="status">
-    <button class="btn" @click.stop="close"></button>
+    <!-- <button class="btn" @click.stop="close"></button> -->
     <movable-area @click.stop="close">
       <movable-view
         direction="all"
@@ -65,19 +65,19 @@ export default {
     }
   }
 }
-.btn {
-  position: fixed;
-  width: rpx(90);
-  height: rpx(90);
-  left: rpx(62);
-  top: rpx(54);
-  z-index: 999999999;
-  border-radius: rpx(20);
-  background-color: rgba(51, 51, 51, 0.8);
-  background-image: url('/static/base-module/common/close-video.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: rpx(60) rpx(60);
-  color: white;
-}
+// .btn {
+//   position: fixed;
+//   width: rpx(90);
+//   height: rpx(90);
+//   left: rpx(62);
+//   top: rpx(54);
+//   z-index: 999999999;
+//   border-radius: rpx(20);
+//   background-color: rgba(51, 51, 51, 0.8);
+//   background-image: url('/static/daotong/close.png');
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: rpx(60) rpx(60);
+//   color: white;
+// }
 </style>
