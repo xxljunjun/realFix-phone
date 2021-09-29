@@ -3,24 +3,23 @@
     <TopBack title="MyComment" />
     <view class="noData">
       <NoData types="4" />
-      1111111
     </view>
-    <myLoading/>
+    <!-- <myLoading /> -->
   </view>
 </template>
 
 <script>
-import TopBack from './component/topBack/topBack'
-import NoData from '../components/noData'
+import TopBack from "./component/topBack/topBack";
+import NoData from "../components/noData";
 export default {
   data() {
-    return {}
+    return {};
   },
   components: {
     TopBack,
     NoData,
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

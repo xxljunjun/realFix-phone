@@ -34,7 +34,7 @@
       <image src="/static/daotong/yan.png" class="yan" />
       <text>{{ items.detail.num2 }}</text>
     </view>
-    <view class="close_box" @tap="toClose" v-if="canDelete">
+    <view class="close_box" @tap.stop="toClose" v-if="canDelete">
       <image src="/static/daotong/close_1.png" class="close" />
     </view>
     <MyDialog
@@ -46,15 +46,15 @@
 </template>
 
 <script>
-import MyDialog from './myDialog'
+import MyDialog from "./myDialog";
 export default {
   data() {
     return {
       dialogIsShow: false,
-    }
+    };
   },
   mounted() {
-    console.log(this.items)
+    console.log(this.items);
   },
   components: {
     MyDialog,
@@ -63,7 +63,7 @@ export default {
     items: {
       type: Object,
       default: () => {
-        return {}
+        return {};
       },
       required: true,
     },
@@ -74,17 +74,17 @@ export default {
   methods: {
     toClose() {
       //调接口删除
-      console.log('删除')
-      this.dialogIsShow = true
+      console.log("删除");
+      this.dialogIsShow = true;
     },
     toclosemask() {
-      this.dialogIsShow = false
+      this.dialogIsShow = false;
     },
     toConfirm() {
-      this.dialogIsShow = false
+      this.dialogIsShow = false;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

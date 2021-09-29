@@ -6,7 +6,11 @@
         >The failure code of 2016 Mercedes-benz E300L is P064104</view
       >
     </view>
-    <image src="../../static/uni.png" class="uni-img" @tap="showImage"></image>
+    <image
+      src="/static/daotong/img_1.png"
+      class="uni-img"
+      @tap="showImage"
+    ></image>
     <!-- <viewer :images="imgs">
       <img v-for="src in imgs" :src="src.url" :key="src.title" />
     </viewer> -->
@@ -83,7 +87,7 @@ export default {
     closeImg() {},
     showImage() {
       console.log("点击图片");
-      this.$refs.bigImg.showImage("../../static/uni.png");
+      this.$refs.bigImg.showImage("/static/daotong/img_1.png");
     },
     addClass() {},
     toSearch() {

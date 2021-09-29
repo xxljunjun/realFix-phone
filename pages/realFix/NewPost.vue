@@ -22,7 +22,7 @@
         class="inp"
         placeholder="Pelese select"
         disabled
-        v-model="Vehicle"
+        v-model="vehicle"
       />
       <image src="/static/daotong/vin.png" class="vin" />
     </view>
@@ -97,8 +97,8 @@
 </template>
 
 <script>
-import TopBack from './component/topBack/topBack'
-import Picker from './component/picker'
+import TopBack from "./component/topBack/topBack";
+import Picker from "./component/picker";
 export default {
   components: {
     TopBack,
@@ -107,106 +107,110 @@ export default {
   data() {
     return {
       unitState: false,
-      unit: 'Miles', //里程单位
+      unit: "Miles", //里程单位
       unitArr: [
-        { id: 1, unit: 'Miles' },
-        { id: 2, unit: 'Kilometers' },
+        { id: 1, unit: "Miles" },
+        { id: 2, unit: "Kilometers" },
       ],
-      unitNum: '', //里程数
-      System: '', //系统
+      unitNum: "", //里程数
+      System: "", //系统
       ischooseSystem: false,
       systemArr: [
-        { id: 1, system: 'Engine', ischeck: false },
-        { id: 2, system: 'ADAS system', ischeck: false },
-        { id: 3, system: 'Communication systems', ischeck: false },
-        { id: 4, system: 'Anti-theft and entry system', ischeck: false },
+        { id: 1, system: "Engine", ischeck: false },
+        { id: 2, system: "ADAS system", ischeck: false },
+        { id: 3, system: "Communication systems", ischeck: false },
+        { id: 4, system: "Anti-theft and entry system", ischeck: false },
       ],
-      Vehicle: '2003 BMW 530i 3.0L', //机型
-      Dtcvalue: '',
-    }
+      vehicle: "", //机型
+      Dtcvalue: "",
+    };
   },
-  onLoad() {},
+  onLoad: function(option) {
+    //option为object类型，会序列化上个页面传递的参数
+    this.vehicle = option.vehicle;
+  },
   mounted() {
-    document.body.addEventListener('click', this.clickBody)
+    document.body.addEventListener("click", this.clickBody);
   },
   destroyed() {
-    document.body.removeEventListener('click', this.clickBody)
+    document.body.removeEventListener("click", this.clickBody);
   },
   methods: {
     toVersion() {
       uni.navigateTo({
-        url: 'component/NewPost/version',
-      })
+        url: "component/NewPost/version",
+      });
     },
     nextHandle() {
-      console.log('下一步')
+      console.log("下一步");
       uni.navigateTo({
-        url: 'NewPost2',
-      })
+        url: "NewPost2",
+      });
     },
     toDtc(e) {
       //回车键13
       //空格键32
       //逗号188
       if (e.keyCode === 13) {
-        console.log(e)
-        this.Dtcvalue = ''
+        console.log(e);
+        this.Dtcvalue = "";
       }
     },
     okSystem() {
       let arr = this.systemArr.filter((val) => {
-        return val.ischeck
-      })
-      let arr1 = []
+        return val.ischeck;
+      });
+      let arr1 = [];
       arr.forEach((val) => {
-        arr1.push(val.system)
-      })
-      this.System = arr1.join()
-      this.ischooseSystem = false
+        arr1.push(val.system);
+      });
+      this.System = arr1.join();
+      this.ischooseSystem = false;
     },
     emptySystem() {
       this.systemArr.forEach((val) => {
-        val.ischeck = false
-      })
+        val.ischeck = false;
+      });
     },
     toSelectSystem(item) {
-      item.ischeck = !item.ischeck
+      item.ischeck = !item.ischeck;
     },
     toClose() {
-      this.ischooseSystem = false
+      this.ischooseSystem = false;
     },
     back() {
       uni.navigateBack({
         delta: 1,
-      })
+      });
     },
     openUnit() {
-      this.unitState = true
+      this.unitState = true;
     },
     toChooseUnit(id) {
-      console.log('id', id)
+      console.log("id", id);
       if (id == 1) {
-        this.unit = 'Miles'
+        this.unit = "Miles";
       } else {
-        this.unit = 'Kilometers'
+        this.unit = "Kilometers";
       }
-      this.unitState = false
+      this.unitState = false;
     },
     clickBody() {
-      this.unitState = false
+      this.unitState = false;
     },
   },
-}
+};
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
 <style lang="scss" scoped>
 uni-page-body,
 uni-page-refresh {
   height: 100%;
   background: rgba(235, 235, 235, 1);
+}
+/deep/.uni-input-wrapper {
+  width: 580rpx !important;
 }
 /* textarea */
 .xxl {

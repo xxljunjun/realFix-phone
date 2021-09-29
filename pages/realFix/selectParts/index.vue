@@ -1,25 +1,25 @@
 <template>
   <view class="selectParts">
     <TopBack title="Select Parts" />
-    <view class="inp">
+    <!-- <view class="inp">
       <input class="input" placeholder="Search" />
       <image src="/static/daotong/search.png" class="search_img" />
-    </view>
+    </view> -->
   </view>
 </template>
 
 <script>
-import TopBack from '../component/topBack/topBack'
+import TopBack from "../component/topBack/topBack";
 export default {
   data() {
-    return {}
+    return {};
   },
   props: {},
   components: {
     TopBack,
   },
   methods: {},
-}
+};
 </script>
 
 <style lang="scss" scoped>

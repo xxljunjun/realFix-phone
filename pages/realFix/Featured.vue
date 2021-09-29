@@ -1,6 +1,6 @@
 <template>
   <view class="home">
-  <!-- 一 -->
+    <!-- 一 -->
     <SearchTopBack :isBack="false" />
     <view class="gundong">
       <view class="gundong_inner">
@@ -25,15 +25,15 @@
       </view>
     </view>
     <!-- 二 -->
-    <mescroll-uni 
-			ref="mescrollRef" 
-			@init="mescrollInit" 
-			@down="downCallback" 
-			@up="upCallback" 
-			:down="downOption" 
-			:up="upOption" 
-			top="0"
-		>
+    <mescroll-uni
+      ref="mescrollRef"
+      @init="mescrollInit"
+      @down="downCallback"
+      @up="upCallback"
+      :down="downOption"
+      :up="upOption"
+      top="0"
+    >
       <view
         class="detailbox"
         v-for="item in detailArr"
@@ -42,7 +42,7 @@
       >
         <Box :items="item" :canDelete="canDelete" />
       </view>
-	  </mescroll-uni>
+    </mescroll-uni>
     <image
       src="/static/daotong/point.png"
       class="sign_img"
@@ -60,29 +60,29 @@
       <view> <text class="num">8</text>new diagnostic cases are awaited.</view>
     </view>
     <!-- 自定义底部导航栏 -->
-    <Loading :loadingStatus="loadingStatus"/>
+    <Loading :loadingStatus="loadingStatus" />
     <BottomTabBar current="featured" />
     <ChooseMask v-if="ischooseMask" @toClose="toClose" title="All Makes" />
   </view>
 </template>
 
 <script>
-import Box from './component/Box'
-import Loading from './component/common/loading'
-import SearchTopBack from './component/topBack/searchTopBack'
-import BottomTabBar from '../components/bottom-tabBar'
-import ChooseMask from './component/chooseMask'
+import Box from "./component/Box";
+import Loading from "./component/common/loading";
+import SearchTopBack from "./component/topBack/searchTopBack";
+import BottomTabBar from "../components/bottom-tabBar";
+import ChooseMask from "./component/chooseMask";
 export default {
   data() {
     return {
-      loadingStatus:true,
+      loadingStatus: true,
       paopaoStatus: true,
       makeArr: [
-        { id: 1, makeName: 'GM', ischecked: false },
-        { id: 2, makeName: 'BMW', ischecked: false },
-        { id: 3, makeName: 'Benz', ischecked: false },
-        { id: 4, makeName: 'Ford', ischecked: false },
-        { id: 5, makeName: 'Toyota', ischecked: false },
+        { id: 1, makeName: "GM", ischecked: false },
+        { id: 2, makeName: "BMW", ischecked: false },
+        { id: 3, makeName: "Benz", ischecked: false },
+        { id: 4, makeName: "Ford", ischecked: false },
+        { id: 5, makeName: "Toyota", ischecked: false },
       ],
       ischooseMask: false,
       detailArr: [],
@@ -90,240 +90,239 @@ export default {
       isSign: false,
       imgStatus: true,
       downOption: {
-					textLoading: '加载中 ...',
-					textOutOffset: "释放刷新",
-					use: true, // 是否启用下拉刷新; 默认true
-					auto: false, // 是否在初始化完毕之后自动执行下拉刷新的回调; 默认true
-					native: false, // 启用系统自带的下拉组件,默认false;仅mescroll-body生效,mescroll-uni无效(native: true, 则需在pages.json中配置"enablePullDownRefresh":true)
-				},
-				// 上拉加载的常用配置
-				upOption: {
-					use: true, // 是否启用上拉加载; 默认true
-					auto: false, // 是否在初始化完毕之后自动执行上拉加载的回调; 默认true
-					page: {
-					num: 1, // 当前页码,默认0,回调之前会加1,即callback(page)会从1开始
-					size: 5, // 每页数据的数量,默认10
-					},
-					noMoreSize: 1, // 配置列表的总数量要大于等于5条才显示'-- END --'的提示
-					empty: {
-					tip: '暂无数据',
-					use: false,
-					// icon: '/static/realFix-module/no-search@2x.png',
-					},
+        textLoading: "加载中 ...",
+        textOutOffset: "释放刷新",
+        use: true, // 是否启用下拉刷新; 默认true
+        auto: false, // 是否在初始化完毕之后自动执行下拉刷新的回调; 默认true
+        native: false, // 启用系统自带的下拉组件,默认false;仅mescroll-body生效,mescroll-uni无效(native: true, 则需在pages.json中配置"enablePullDownRefresh":true)
+      },
+      // 上拉加载的常用配置
+      upOption: {
+        use: true, // 是否启用上拉加载; 默认true
+        auto: false, // 是否在初始化完毕之后自动执行上拉加载的回调; 默认true
+        page: {
+          num: 1, // 当前页码,默认0,回调之前会加1,即callback(page)会从1开始
+          size: 5, // 每页数据的数量,默认10
+        },
+        noMoreSize: 1, // 配置列表的总数量要大于等于5条才显示'-- END --'的提示
+        empty: {
+          tip: "暂无数据",
+          use: false,
+          // icon: '/static/realFix-module/no-search@2x.png',
+        },
 
-					textNoMore:
-					'-------  ' + '你已经到底了哟' + '  -------',
-					toTop: {
-					src: '/static/top@2x.png',
-					},
-				},
-    }
+        textNoMore: "-------  " + "你已经到底了哟" + "  -------",
+        toTop: {
+          src: "/static/top@2x.png",
+        },
+      },
+    };
   },
   components: {
     SearchTopBack,
     Box,
     BottomTabBar,
     ChooseMask,
-    Loading
+    Loading,
   },
   mounted() {
-    this.getHomeList()
-    setTimeout(()=>{
-      this.loadingStatus = false
-    },2000)
+    this.getHomeList();
+    setTimeout(() => {
+      this.loadingStatus = false;
+    }, 2000);
   },
   onShow() {
-    this.paopaoStatus = true
+    this.paopaoStatus = true;
     setTimeout(() => {
-      this.paopaoStatus = false
-    }, 3000)
+      this.paopaoStatus = false;
+    }, 3000);
   },
   onHide() {},
-  onLoad: function (option) {},
+  onLoad: function(option) {},
   methods: {
     //滚动组件初始化
     mescrollInit(mescroll) {
-      this.mescroll = mescroll
+      this.mescroll = mescroll;
     },
     /*下拉刷新的回调*/
     downCallback() {
-      console.log('downCallback')
-      this.mescroll.endSuccess()
+      console.log("downCallback");
+      this.mescroll.endSuccess();
     },
     // 上拉更新更多
     upCallback() {
-      console.log('upCallback')
+      console.log("upCallback");
       //  this.mescroll.endErr()
-        this.mescroll.endByPage(0, 0); 
+      this.mescroll.endByPage(0, 0);
     },
     handleTouchmove(e) {
       // console.log('handleTouchmove', e)
-      e.preventDefault()
+      e.preventDefault();
     },
     preventMove() {
       document
-        .querySelector('.home')
-        .addEventListener('touchmove', this.handleTouchmove)
+        .querySelector(".home")
+        .addEventListener("touchmove", this.handleTouchmove);
     },
     recoverMove() {
       //恢复滑动
       document
-        .querySelector('.home')
-        .removeEventListener('touchmove', this.handleTouchmove)
+        .querySelector(".home")
+        .removeEventListener("touchmove", this.handleTouchmove);
     },
     toSearchMake(id) {
-      console.log(id)
+      console.log(id);
       this.makeArr.forEach((val) => {
         if (val.id == id) {
-          val.ischecked = true
+          val.ischecked = true;
         } else {
-          val.ischecked = false
+          val.ischecked = false;
         }
-      })
+      });
     },
     toClose() {
-      this.ischooseMask = false
-      this.recoverMove()
+      this.ischooseMask = false;
+      this.recoverMove();
     },
     goToChooseMask() {
-      this.ischooseMask = true
-      this.preventMove()
+      this.ischooseMask = true;
+      this.preventMove();
     },
     goToSign() {
-      console.log('签到')
-      this.imgStatus = false
-      this.isSign = true
+      console.log("签到");
+      this.imgStatus = false;
+      this.isSign = true;
       setTimeout(() => {
-        this.isSign = false
-      }, 2000)
+        this.isSign = false;
+      }, 2000);
     },
     toDetail(id) {
-      console.log('去到详情页', id)
+      console.log("去到详情页", id);
       uni.navigateTo({
-        url: 'detail',
-      })
+        url: "detail",
+      });
     },
     getHomeList() {
       this.detailArr = [
         {
           id: 1,
           detail: {
-            title: '19 ercedes-Benz GLS450 steering systems failed',
-            Vehicle: '2003 BMW 530i 3.0L',
-            dtcarr: ['P0171', 'P0174', 'P0101'],
+            title: "19 ercedes-Benz GLS450 steering systems failed",
+            Vehicle: "2003 BMW 530i 3.0L",
+            dtcarr: ["P0171", "P0174", "P0101"],
             text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
-            author: 'Milan Collier',
-            num1: '22',
-            num2: '33',
+              "The customer states the check engine light is on and the vehicle exhibits a hard start ",
+            author: "Milan Collier",
+            num1: "22",
+            num2: "33",
             imgsrc: [
-              '/static/daotong/img_1.png',
-              '/static/daotong/img_2.png',
-              '/static/daotong/img_3.png',
+              "/static/daotong/img_1.png",
+              "/static/daotong/img_2.png",
+              "/static/daotong/img_3.png",
             ],
           },
         },
         {
           id: 2,
           detail: {
-            title: '19 ercedes-Benz GLS450 steering systems failed',
-            Vehicle: '2003 BMW 530i 3.0L',
-            dtcarr: ['P0171', 'P0174', 'P0101'],
+            title: "19 ercedes-Benz GLS450 steering systems failed",
+            Vehicle: "2003 BMW 530i 3.0L",
+            dtcarr: ["P0171", "P0174", "P0101"],
             text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
-            author: 'Milan Collier',
-            num1: '22',
-            num2: '33',
+              "The customer states the check engine light is on and the vehicle exhibits a hard start ",
+            author: "Milan Collier",
+            num1: "22",
+            num2: "33",
             imgsrc: [
-              '/static/daotong/img_3.png',
-              '/static/daotong/img_2.png',
-              '/static/daotong/img_1.png',
+              "/static/daotong/img_3.png",
+              "/static/daotong/img_2.png",
+              "/static/daotong/img_1.png",
             ],
           },
         },
         {
           id: 3,
           detail: {
-            title: '19 ercedes-Benz GLS450 steering systems failed',
-            Vehicle: '2003 BMW 530i 3.0L',
-            dtcarr: ['P0171', 'P0174', 'P0101'],
+            title: "19 ercedes-Benz GLS450 steering systems failed",
+            Vehicle: "2003 BMW 530i 3.0L",
+            dtcarr: ["P0171", "P0174", "P0101"],
             text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
-            author: 'Milan Collier',
-            num1: '22',
-            num2: '33',
+              "The customer states the check engine light is on and the vehicle exhibits a hard start ",
+            author: "Milan Collier",
+            num1: "22",
+            num2: "33",
             imgsrc: [
-              '/static/daotong/img_2.png',
-              '/static/daotong/img_3.png',
-              '/static/daotong/img_1.png',
+              "/static/daotong/img_2.png",
+              "/static/daotong/img_3.png",
+              "/static/daotong/img_1.png",
             ],
           },
         },
         {
           id: 4,
           detail: {
-            title: '19 ercedes-Benz GLS450 steering systems failed',
-            Vehicle: '2003 BMW 530i 3.0L',
-            dtcarr: ['P0171', 'P0174', 'P0101'],
+            title: "19 ercedes-Benz GLS450 steering systems failed",
+            Vehicle: "2003 BMW 530i 3.0L",
+            dtcarr: ["P0171", "P0174", "P0101"],
             text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
-            author: 'Milan Collier',
-            num1: '22',
-            num2: '33',
+              "The customer states the check engine light is on and the vehicle exhibits a hard start ",
+            author: "Milan Collier",
+            num1: "22",
+            num2: "33",
             imgsrc: [
-              '/static/daotong/img_2.png',
-              '/static/daotong/img_3.png',
-              '/static/daotong/img_1.png',
+              "/static/daotong/img_2.png",
+              "/static/daotong/img_3.png",
+              "/static/daotong/img_1.png",
             ],
           },
         },
         {
           id: 5,
           detail: {
-            title: '19 ercedes-Benz GLS450 steering systems failed',
-            Vehicle: '2003 BMW 530i 3.0L',
-            dtcarr: ['P0171', 'P0174', 'P0101'],
+            title: "19 ercedes-Benz GLS450 steering systems failed",
+            Vehicle: "2003 BMW 530i 3.0L",
+            dtcarr: ["P0171", "P0174", "P0101"],
             text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
-            author: 'Milan Collier',
-            num1: '22',
-            num2: '33',
+              "The customer states the check engine light is on and the vehicle exhibits a hard start ",
+            author: "Milan Collier",
+            num1: "22",
+            num2: "33",
             imgsrc: [
-              '/static/daotong/img_2.png',
-              '/static/daotong/img_3.png',
-              '/static/daotong/img_1.png',
+              "/static/daotong/img_2.png",
+              "/static/daotong/img_3.png",
+              "/static/daotong/img_1.png",
             ],
           },
         },
         {
           id: 6,
           detail: {
-            title: '19 ercedes-Benz GLS450 steering systems failed',
-            Vehicle: '2003 BMW 530i 3.0L',
-            dtcarr: ['P0171', 'P0174', 'P0101'],
+            title: "19 ercedes-Benz GLS450 steering systems failed",
+            Vehicle: "2003 BMW 530i 3.0L",
+            dtcarr: ["P0171", "P0174", "P0101"],
             text:
-              'The customer states the check engine light is on and the vehicle exhibits a hard start ',
-            author: 'Milan Collier',
-            num1: '22',
-            num2: '33',
+              "The customer states the check engine light is on and the vehicle exhibits a hard start ",
+            author: "Milan Collier",
+            num1: "22",
+            num2: "33",
             imgsrc: [
-              '/static/daotong/img_2.png',
-              '/static/daotong/img_3.png',
-              '/static/daotong/img_1.png',
+              "/static/daotong/img_2.png",
+              "/static/daotong/img_3.png",
+              "/static/daotong/img_1.png",
             ],
           },
         },
-      ]
+      ];
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-/deep/.mescroll-uni{
-	margin-top:200rpx !important;
-  margin-bottom:150rpx !important;
-  background:#fff;
+/deep/.mescroll-uni {
+  margin-top: 200rpx !important;
+  margin-bottom: 150rpx !important;
+  background: #fff;
 }
 .home {
   padding-top: 178rpx;
@@ -442,7 +441,7 @@ export default {
   }
   .detailbox {
     padding: 30rpx 0 0 30rpx;
-    background:#fff;
+    background: #fff;
   }
   .sign_img {
     height: 180rpx;

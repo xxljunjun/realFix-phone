@@ -59,8 +59,8 @@
 </template>
 
 <script>
-import BottomTabBar from '../components/bottom-tabBar'
-import MyDialog from './component/myDialog'
+import BottomTabBar from "../components/bottom-tabBar";
+import MyDialog from "./component/myDialog";
 export default {
   data() {
     return {
@@ -68,22 +68,22 @@ export default {
       isSign: false,
       dialogIsShow: false,
       boxarr: [
-        { id: 1, message: 'Lottery', iconSrc: '/static/myself/red.png' },
+        { id: 1, message: "Lottery", iconSrc: "/static/myself/red.png" },
         {
           id: 2,
-          message: 'Points ',
-          iconSrc: '/static/myself/yellow.png',
-          point: 'To receive 100 points',
+          message: "Points ",
+          iconSrc: "/static/myself/yellow.png",
+          point: "To receive 100 points",
         },
-        { id: 3, message: 'Favorite', iconSrc: '/static/myself/orange.png' },
-        { id: 4, message: 'My Post', iconSrc: '/static/myself/green.png' },
+        { id: 3, message: "Favorite", iconSrc: "/static/myself/orange.png" },
+        { id: 4, message: "My Post", iconSrc: "/static/myself/green.png" },
         {
           id: 5,
-          message: 'My Messages',
-          iconSrc: '/static/myself/blue.png',
+          message: "My Messages",
+          iconSrc: "/static/myself/blue.png",
         },
       ],
-    }
+    };
   },
   components: {
     BottomTabBar,
@@ -91,83 +91,83 @@ export default {
   },
   methods: {
     goToSign() {
-      console.log('签到')
-      this.imgStatus = false
-      this.isSign = true
+      console.log("签到");
+      this.imgStatus = false;
+      this.isSign = true;
       setTimeout(() => {
-        this.isSign = false
-      }, 2000)
+        this.isSign = false;
+      }, 2000);
     },
     goTomythings(index) {
       switch (index) {
         case 1:
           uni.navigateTo({
-            url: 'MyFlowers',
-          })
-          break
+            url: "MyFlowers",
+          });
+          break;
         case 2:
           uni.navigateTo({
-            url: 'MyFollowing',
-          })
-          break
+            url: "MyFollowing",
+          });
+          break;
         case 3:
           uni.navigateTo({
-            url: 'MyFixed',
-          })
-          break
+            url: "MyFixed",
+          });
+          break;
         case 4:
           uni.navigateTo({
-            url: 'MyComment',
-          })
-          break
+            url: "MyComment",
+          });
+          break;
         default:
-          break
+          break;
       }
     },
     toclosemask() {
-      this.dialogIsShow = false
+      this.dialogIsShow = false;
     },
     toConfirm() {
-      this.dialogIsShow = false
+      this.dialogIsShow = false;
     },
     goToPage(id) {
       switch (id) {
         case 1:
           uni.navigateTo({
-            url: 'Lottery',
-          })
-          break
+            url: "Lottery",
+          });
+          break;
         case 2:
           uni.navigateTo({
-            url: 'Points',
-          })
-          break
+            url: "Points",
+          });
+          break;
         case 3:
           uni.navigateTo({
-            url: 'Favorite',
-          })
-          break
+            url: "Favorite",
+          });
+          break;
         case 4:
           uni.navigateTo({
-            url: 'Mypost',
-          })
-          break
+            url: "Mypost",
+          });
+          break;
         case 5:
           uni.navigateTo({
-            url: 'MyMessage',
-          })
-          break
+            url: "MyMessage",
+          });
+          break;
 
         default:
-          break
+          break;
       }
     },
     toLogOut() {
-      console.log('退出登录')
-      this.dialogIsShow = true
+      console.log("退出登录");
+      this.dialogIsShow = true;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -177,18 +177,18 @@ uni-page-refresh {
 }
 .mySelf {
   background: rgba(224, 224, 224, 1);
-  height: 100%;
+  height: 100vh;
   font-size: 34rpx;
   color: #000;
   .heard {
     width: 750rpx;
-    height: 80rpx;
+    height: 150rpx;
     background: rgba(235, 235, 235, 1);
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 70rpx;
+    // align-items: center;
+    // padding-bottom: 70rpx;
     position: relative;
     .daily {
       width: 325rpx;
@@ -210,7 +210,7 @@ uni-page-refresh {
     .logoutbox {
       font-size: 30rpx;
       color: rgba(85, 85, 85, 1);
-      line-height: 34rpx;
+      line-height: 80rpx;
       position: absolute;
       right: 30rpx;
     }
@@ -249,7 +249,8 @@ uni-page-refresh {
     background: rgba(235, 235, 235, 1);
     display: flex;
     align-items: center;
-    margin-bottom: 20rpx;
+    // margin-bottom: 20rpx;
+    padding-bottom: 20rpx;
     text-align: center;
     justify-content: space-around;
     font-size: 26rpx;

@@ -64,12 +64,12 @@
 </template>
 
 <script>
-import TopBack from '../topBack/topBack'
+import TopBack from "../topBack/topBack";
 export default {
   data() {
     return {
-      who: '',
-      title: 'Select Year',
+      who: "",
+      title: "Select Year",
       yearStatus: true,
       markStatus: false,
       modelStatus: false,
@@ -84,123 +84,126 @@ export default {
         { id: 7, yearName: 2014, isChoose: false },
       ],
       markArr: [
-        { id: 1, markName: 'BMW', isChoose: false },
-        { id: 2, markName: 'Buick', isChoose: false },
-        { id: 3, markName: 'Chrysler', isChoose: false },
-        { id: 4, markName: 'DS', isChoose: false },
-        { id: 5, markName: 'DMC', isChoose: false },
-        { id: 6, markName: 'Buick', isChoose: false },
+        { id: 1, markName: "BMW", isChoose: false },
+        { id: 2, markName: "Buick", isChoose: false },
+        { id: 3, markName: "Chrysler", isChoose: false },
+        { id: 4, markName: "DS", isChoose: false },
+        { id: 5, markName: "DMC", isChoose: false },
+        { id: 6, markName: "Buick", isChoose: false },
       ],
       modelArr: [
-        { id: 1, modelName: '116i', isChoose: false },
-        { id: 2, modelName: '118d', isChoose: false },
-        { id: 3, modelName: '218i', isChoose: false },
-        { id: 4, modelName: '320i', isChoose: false },
+        { id: 1, modelName: "116i", isChoose: false },
+        { id: 2, modelName: "118d", isChoose: false },
+        { id: 3, modelName: "218i", isChoose: false },
+        { id: 4, modelName: "320i", isChoose: false },
       ],
       engineArr: [
         {
           id: 1,
-          engineName: '2.0L L4(N20B20A)Turbocharged GAS FI',
+          engineName: "2.0L L4(N20B20A)Turbocharged GAS FI",
           isChoose: false,
         },
         {
           id: 2,
-          engineName: '2.0L L4(N20B20A)Turbocharged GAS FI',
+          engineName: "2.0L L4(N20B20A)Turbocharged GAS FI",
           isChoose: false,
         },
         {
           id: 3,
-          engineName: '2.0L L4(N20B20A)Turbocharged GAS FI',
+          engineName: "2.0L L4(N20B20A)Turbocharged GAS FI",
           isChoose: false,
         },
         {
           id: 4,
-          engineName: '2.0L L4(N20B20A)Turbocharged GAS FI',
+          engineName: "2.0L L4(N20B20A)Turbocharged GAS FI",
           isChoose: false,
         },
         {
           id: 5,
-          engineName: '2.0L L4(N20B20A)Turbocharged GAS FI',
+          engineName: "2.0L L4(N20B20A)Turbocharged GAS FI",
           isChoose: false,
         },
       ],
       version: {
-        year: '',
-        mark: '',
-        model: '',
-        engineS: '',
+        year: "",
+        mark: "",
+        model: "",
+        engineS: "",
       },
-    }
+    };
   },
   components: {
     TopBack,
   },
   methods: {
     tochooseYear(id) {
-      console.log('选择')
+      console.log("选择");
 
       this.yearArr.forEach((val) => {
         if (val.id == id) {
           if (!val.isChoose) {
-            this.yearStatus = false
-            this.markStatus = true
-            this.title = 'Select Make'
-            this.who = val.yearName + ' ' + '>' + ' '
+            this.yearStatus = false;
+            this.markStatus = true;
+            this.title = "Select Make";
+            this.who = val.yearName + " " + ">" + " ";
           }
-          val.isChoose = !val.isChoose
+          val.isChoose = !val.isChoose;
         }
-      })
+      });
     },
     tochooseMark(id) {
-      console.log('选择')
+      console.log("选择");
 
       this.markArr.forEach((val) => {
         if (val.id == id) {
           if (!val.isChoose) {
-            this.markStatus = false
-            this.modelStatus = true
-            this.title = 'Select Model'
-            this.who = this.who + val.markName + ' ' + '>' + ' '
+            this.markStatus = false;
+            this.modelStatus = true;
+            this.title = "Select Model";
+            this.who = this.who + val.markName + " " + ">" + " ";
           }
-          val.isChoose = !val.isChoose
+          val.isChoose = !val.isChoose;
         }
-      })
+      });
     },
     tochooseModel(id) {
-      console.log('选择')
+      console.log("选择");
 
       this.modelArr.forEach((val) => {
         if (val.id == id) {
           if (!val.isChoose) {
-            this.modelStatus = false
-            this.engineStatus = true
-            this.title = 'Select Engine'
-            this.who = this.who + val.modelName + ' ' + '>' + ' '
+            this.modelStatus = false;
+            this.engineStatus = true;
+            this.title = "Select Engine";
+            this.who = this.who + val.modelName + " " + ">" + " ";
           }
-          val.isChoose = !val.isChoose
+          val.isChoose = !val.isChoose;
         }
-      })
+      });
     },
     tochooseEngine(id) {
-      console.log('选择')
+      console.log("选择");
 
       this.engineArr.forEach((val) => {
         if (val.id == id) {
-          // if (!val.isChoose) {
-          //   this.engineStatus = false
-          //   this.title = 'Select Engine'
-          //   this.who = this.who + val.engineName + ' ' + '>' + ' '
-          // }
-          // val.isChoose = !val.isChoose
+          if (!val.isChoose) {
+            this.engineStatus = false;
+            this.title = "Select Engine";
+            this.who = this.who + val.engineName;
+          }
+          val.isChoose = !val.isChoose;
         }
-      })
+      });
       //跳转
-      uni.navigateBack({
-        delta: 1,
-      })
+      // uni.navigateBack({
+      //   delta: 1,
+      // })
+      uni.navigateTo({
+        url: `/pages/realFix/NewPost?vehicle=${this.who}`,
+      });
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

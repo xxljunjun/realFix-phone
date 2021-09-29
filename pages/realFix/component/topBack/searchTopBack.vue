@@ -1,7 +1,7 @@
 <template>
   <view class="header">
     <view class="inp">
-      <input class="input" placeholder="Search" @focus="toSearch" />
+      <input class="input" placeholder="Search" />
       <image src="/static/daotong/search.png" class="search_img" />
       <image src="/static/daotong/speak.png" class="speak_img" />
     </view>
@@ -15,7 +15,7 @@
 <script>
 export default {
   data() {
-    return {}
+    return {};
   },
   props: {
     isBack: {
@@ -25,20 +25,14 @@ export default {
     },
   },
   methods: {
-    toSearch() {
-      //跳转搜索页面
-      uni.navigateTo({
-        url: 'search',
-      })
-    },
     goToLottery() {
-      console.log('跳转抽奖页面')
+      console.log("跳转抽奖页面");
       uni.navigateTo({
-        url: 'Lottery',
-      })
+        url: "Lottery",
+      });
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -88,21 +82,21 @@ export default {
       height: 36rpx;
       width: 36rpx;
       position: absolute;
-      top: 14rpx;
+      top: 18rpx;
       left: 30rpx;
     }
     .speak_img {
       height: 44rpx;
       width: 44rpx;
       position: absolute;
-      top: 10rpx;
+      top: 14rpx;
       right: 30rpx;
     }
     .input {
       width: 570rpx;
       height: 64rpx;
       background: rgba(245, 245, 245, 1);
-      box-shadow: 0px 3rpx 9rpx 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 3rpx 9rpx 0px rgba(0, 0, 0, 0.2) inset;
       border-radius: 36rpx;
       border: 2px solid rgba(204, 204, 204, 1);
       font-size: 30rpx;
