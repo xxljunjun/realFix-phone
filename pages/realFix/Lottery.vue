@@ -2,7 +2,7 @@
   <view class="lottery">
     <TopBack title="Lottery" />
     <view class="banner-box">
-      <img src="/static/price/banner.png" alt="" class="banner" />
+      <img src="../../static/price/banner.png" alt="" class="banner" />
     </view>
     <view class="time-box">
       <view class="time-left">Period</view>
@@ -22,7 +22,7 @@
     <view class="rote-box">
       <view class="btn-box">
         <img
-          src="/static/price/btn.png"
+          src="../../static/price/btn.png"
           alt=""
           class="btn"
           @click="goToStart"
@@ -39,7 +39,7 @@
     </view>
     <view class="account-box">
       <view class="account-top">
-        <img src="/static/price/money_small.png" alt="" />
+        <img src="../../static/price/money_small.png" alt="" />
         <span class="txt-price">350</span>
       </view>
       <view class="account-bottom">Account Points Balance</view>
@@ -55,7 +55,7 @@
       <view class="title">1st Prize</view>
       <view class="txt">Including one Maxisys Ultra and one Maxisys 909</view>
       <view class="img_box">
-        <img src="/static/price/pad.png" alt="" />
+        <img src="../../static/price/pad.png" alt="" />
       </view>
       <view class="value">Values:$10,000</view>
     </view>
@@ -92,84 +92,84 @@ export default {
           id: 1,
           text: "1st Prize",
           isSelect: false,
-          src: require("@/static/price/pad.png"),
+          src: require("../../static/price/pad.png"),
           pictrueClase: "small-price_1",
         },
         {
           id: 2,
           text: "1000 Points",
           isSelect: false,
-          src: require("@/static/price/money_small.png"),
+          src: require("../../static/price/money_small.png"),
           pictrueClase: "small-price_2",
         },
         {
           id: 3,
           text: "Thank you",
           isSelect: false,
-          src: require("@/static/price/small.png"),
+          src: require("../../static/price/small.png"),
           pictrueClase: "small-price_3",
         },
         {
           id: 4,
           text: "2nd Prize",
           isSelect: false,
-          src: require("@/static/price/pad_1.png"),
+          src: require("../../static/price/pad_1.png"),
           pictrueClase: "small-price_4",
         },
         {
           id: 5,
           text: "500 Points",
           isSelect: false,
-          src: require("@/static/price/money_1.png"),
+          src: require("../../static/price/money_1.png"),
           pictrueClase: "small-price_5",
         },
         {
           id: 6,
           text: "Thank you ",
           isSelect: false,
-          src: require("@/static/price/small.png"),
+          src: require("../../static/price/small.png"),
           pictrueClase: "small-price_6",
         },
         {
           id: 7,
           text: "3rd Prize",
           isSelect: false,
-          src: require("@/static/price/phone.png"),
+          src: require("../../static/price/phone.png"),
           pictrueClase: "small-price_7",
         },
         {
           id: 8,
           text: "500 Points",
           isSelect: false,
-          src: require("@/static/price/money_1.png"),
+          src: require("../../static/price/money_1.png"),
           pictrueClase: "small-price_8",
         },
         {
           id: 9,
           text: "Thank you",
           isSelect: false,
-          src: require("@/static/price/small.png"),
+          src: require("../../static/price/small.png"),
           pictrueClase: "small-price_9",
         },
         {
           id: 10,
           text: "4st Prize",
           isSelect: false,
-          src: require("@/static/price/autel.png"),
+          src: require("../../static/price/autel.png"),
           pictrueClase: "small-price_10",
         },
         {
           id: 11,
           text: "1000 Points",
           isSelect: false,
-          src: require("@/static/price/money_small.png"),
+          src: require("../../static/price/money_small.png"),
           pictrueClase: "small-price_11",
         },
         {
           id: 12,
           text: "Thank you",
           isSelect: false,
-          src: require("@/static/price/small.png"),
+          src: require("../../static/price/small.png"),
           pictrueClase: "small-price_12",
         },
       ],
@@ -476,8 +476,8 @@ export default {
     }
   }
   .Winners-box {
-    height: 610rpx;
-    // width: 690rpx;
+    // height: 610rpx;
+    width: 690rpx;
     background: #f3f3f5;
     margin: 55rpx auto 0;
     .title-box {
@@ -497,7 +497,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 0 30rpx;
+      padding: 0 30rpx;
       .left {
         font-size: 26rpx;
         color: #555555;

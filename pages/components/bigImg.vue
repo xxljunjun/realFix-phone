@@ -14,27 +14,27 @@
     </movable-area>
   </view>
 </template>
-    
+
 <script>
 export default {
   data() {
     return {
       status: false,
-      url: '',
-    }
+      url: "",
+    };
   },
   methods: {
     close() {
-      this.status = false
-      this.url = ''
-      this.$emit('closeImg')
+      this.status = false;
+      this.url = "";
+      this.$emit("closeImg");
     },
     showImage(val) {
-      this.status = true
-      this.url = val
+      this.status = true;
+      this.url = val;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -55,12 +55,13 @@ export default {
     movable-view {
       display: flex;
       justify-content: center;
+      align-items: center;
       width: 100%;
       height: 100%;
       image {
         top: 10%;
         width: 80%;
-        height: 80%;
+        // height: 80%;
       }
     }
   }
